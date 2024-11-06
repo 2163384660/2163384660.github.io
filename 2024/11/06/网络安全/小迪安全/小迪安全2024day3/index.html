@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		Python基础思维导图 | 
+		小迪安全2024day3 | 
 	 
 	十二亿七千光年的笔记本
 	</title>
@@ -126,7 +126,7 @@
 									</a>
 									
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2024/11/06/python/Python%E5%9F%BA%E7%A1%80%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
                      
 										    Python基础思维导图
@@ -199,7 +199,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day3/">
                      
 										    小迪安全2024day3
@@ -257,7 +257,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	Python基础思维导图
+	小迪安全2024day3
 </h1>
 
 <!-- meta -->
@@ -265,7 +265,7 @@
 	
 
 	<span>十二亿七千光年</span>
-	<span>2024-11-06 00:00:00</span>
+	<span>2024-11-06 18:52:29</span>
 
   <div id="article-categories">
     
@@ -283,7 +283,91 @@
 
 <!-- content -->
 <div id="article-content">
-	<h1 id="Python基础思维导图"><a href="#Python基础思维导图" class="headerlink" title="Python基础思维导图"></a>Python基础思维导图</h1><p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411061810317.png"></p>
+	<p>title: 小迪安全2024day3</p>
+<p>date: 2024-11-06</p>
+<h1 id="Web拓展-CDN-WAF-OSS-反向-负载均衡"><a href="#Web拓展-CDN-WAF-OSS-反向-负载均衡" class="headerlink" title="Web拓展-CDN&amp;WAF&amp;OSS&amp;反向&amp;负载均衡"></a>Web拓展-CDN&amp;WAF&amp;OSS&amp;反向&amp;负载均衡</h1><h2 id="1-WAF"><a href="#1-WAF" class="headerlink" title="1.WAF"></a>1.WAF</h2><ul>
+<li><p>原理：Web应用防火墙，旨在提供保护</p>
+</li>
+<li><p>影响：常规Web安全测试手段会受到拦截</p>
+</li>
+<li><p>演示：免费D盾防护软件</p>
+<ul>
+<li>Windows2012 + IIS +D盾</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-CDN"><a href="#2-CDN" class="headerlink" title="2.CDN"></a>2.CDN</h2><ul>
+<li><p>原理：内容分发服务，旨在提高访问速度，使用就近区域节点进行一个加速服务，访问时ip为节点ip</p>
+</li>
+<li><p>影响：隐藏真实源IP，导致对目标测试错误</p>
+</li>
+</ul>
+<p>演示：阿里云备案域名全局CDN加速服务</p>
+<p>Windows2012 + BT宝塔面板 + CDN服务</p>
+<h2 id="3-OSS"><a href="#3-OSS" class="headerlink" title="3.OSS"></a>3.OSS</h2><ul>
+<li><p>原理：云存储服务（存储数据），旨在提高访问速度</p>
+<p>为什么要使用第三方存储？</p>
+<ul>
+<li><p>1.静态文件会占用大量带宽</p>
+</li>
+<li><p>2.加载速度</p>
+</li>
+<li><p>3.存储空间</p>
+</li>
+</ul>
+</li>
+<li><p>影响：上传的文件或解析的文件均来自于OSS资源，无法解析，单独存储</p>
+<ul>
+<li><p>1.修复上传安全（文件上传漏洞）</p>
+</li>
+<li><p>2.文件解析不一样</p>
+</li>
+<li><p>3.但Accesskey隐患（云安全问题）</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>演示：</p>
+<p><a target="_blank" rel="noopener" href="https://cloudreve.org/">https://cloudreve.org/</a></p>
+<p>Windows2012 + cloudreve + 阿里云OSS</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/cloudreve/Cloudreve/releases/tag/3.7.1">https://github.com/cloudreve/Cloudreve/releases/tag/3.7.1</a></p>
+<p>1、启动应用</p>
+<p>2、登录管理</p>
+<p>3、配置存储信息</p>
+<p>4、更改用户组存储属性</p>
+<p>阿里云OSS:</p>
+<p>1、开通OSS</p>
+<p>2、新建Bucket</p>
+<p>3、配置Bucket属性</p>
+<p>4、配置Access访问</p>
+<h2 id="4-反向代理"><a href="#4-反向代理" class="headerlink" title="4.反向代理"></a>4.反向代理</h2><ul>
+<li><p>正向代理为客户端服务</p>
+<p>客户端主动建立代理访问目标（不代理不可达）</p>
+<p>如：翻墙</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410212302889.png"></p>
+</li>
+<li><p>反向代理为服务端服务</p>
+<p>服务器主动转发数据给可访问地址（不主动不可达）</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410212303669.png"></p>
+</li>
+<li><p>原理：通过网络进行反向代理转发真实服务达到目的</p>
+</li>
+<li><p>影响：访问目标只是一个代理服务器，非真实应用服务器</p>
+</li>
+<li><p>注意：正向代理和反向代理都是解决访问不可达的问题，但由于反向代理中多出一个可以重定向解析的功能操作，导致反向代理出的站点指向和真实应用毫无关系</p>
+<p>如访问<a target="_blank" rel="noopener" href="http://www.xxx.com是正常的站点,设置www.xxx.com/a%E8%AE%BF%E9%97%AE%E5%88%B0%E4%BA%86%E7%99%BE%E5%BA%A6%E7%9A%84%E7%BD%91%E9%A1%B5%E3%80%82%E8%AE%BE%E7%BD%AE%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%88%B0%E5%85%B6%E4%BB%96%E5%9C%B0%E6%96%B9">www.xxx.com是正常的站点，设置www.xxx.com/a访问到了百度的网页。设置后台管理反向代理到其他地方</a></p>
+</li>
+</ul>
+<p>演示：Nginx反向代理配置</p>
+<p>Windows2012 + BT宝塔面板 + Nginx</p>
+<h2 id="5-负载均衡"><a href="#5-负载均衡" class="headerlink" title="5.负载均衡"></a>5.负载均衡</h2><ul>
+<li><p>原理：分摊到多个操作单元上进行执行，共同完成工作任务。一个网站使用多台服务器，避免了天灾人祸造成的影响</p>
+</li>
+<li><p>影响：有多个服务器加载服务，测试过程中存在多个目标情况</p>
+</li>
+</ul>
+<p>演示：Nginx负载均衡配置</p>
+<p>Windows2012 + BT宝塔面板 + Nginx</p>
 
 </div>
 
@@ -292,16 +376,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day1/">
+              <a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day6/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  小迪安全2024day1
+                  小迪安全2024day6
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2024/11/06/Linux/Linux%E5%9F%BA%E7%A1%80%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
-                Linux基础思维导图
+              <a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day1/">
+                小迪安全2024day1
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		Python基础思维导图 | 
+		小迪安全2024day6 | 
 	 
 	十二亿七千光年的笔记本
 	</title>
@@ -126,7 +126,7 @@
 									</a>
 									
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2024/11/06/python/Python%E5%9F%BA%E7%A1%80%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
                      
 										    Python基础思维导图
@@ -210,7 +210,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day6/">
                      
 										    小迪安全2024day6
@@ -257,7 +257,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	Python基础思维导图
+	小迪安全2024day6
 </h1>
 
 <!-- meta -->
@@ -265,7 +265,7 @@
 	
 
 	<span>十二亿七千光年</span>
-	<span>2024-11-06 00:00:00</span>
+	<span>2024-11-06 18:53:50</span>
 
   <div id="article-categories">
     
@@ -283,8 +283,48 @@
 
 <!-- content -->
 <div id="article-content">
-	<h1 id="Python基础思维导图"><a href="#Python基础思维导图" class="headerlink" title="Python基础思维导图"></a>Python基础思维导图</h1><p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411061810317.png"></p>
-
+	<p>title: 小迪安全2024day6</p>
+<p>date: 2024-11-06</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="基础入门-抓包技术-HTTPS-协议-APP-小程序-PC-应用-WEB-转发联动"><a href="#基础入门-抓包技术-HTTPS-协议-APP-小程序-PC-应用-WEB-转发联动" class="headerlink" title="基础入门-抓包技术&amp;HTTPS 协议&amp;APP&amp;小程序&amp;PC 应用&amp;WEB&amp;转发联动"></a>基础入门-抓包技术&amp;HTTPS 协议&amp;APP&amp;小程序&amp;PC 应用&amp;WEB&amp;转发联动</h1><h2 id="抓包技术-HTTP-S-Web-APP-小程序-PC-应用等"><a href="#抓包技术-HTTP-S-Web-APP-小程序-PC-应用等" class="headerlink" title="抓包技术-HTTP&#x2F;S-Web&amp;APP&amp;小程序&amp;PC 应用等"></a>抓包技术-HTTP&#x2F;S-Web&amp;APP&amp;小程序&amp;PC 应用等</h2><h2 id="抓包工具-Burp-Fidder-Charles-Proxifier"><a href="#抓包工具-Burp-Fidder-Charles-Proxifier" class="headerlink" title="抓包工具-Burp&amp;Fidder&amp;Charles&amp;Proxifier"></a>抓包工具-Burp&amp;Fidder&amp;Charles&amp;Proxifier</h2><p>注意：只能抓https，https协议，其他协议抓不了</p>
+<p>注意：证书配置，代理设置（系统代理或代理工具的配置）</p>
+<p>抓包对象：Web,App,小程序，pc应用</p>
+<h2 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h2><p>Web 应用-http&#x2F;s-Burp&amp;Charles&amp;Fiddler  </p>
+<p>APP 应用-http&#x2F;s-Burp&amp;Charles&amp;Fiddler </p>
+<p>WX 小程序-http&#x2F;s-Burp&amp;Charles&amp;Fiddler  </p>
+<p>PC 端应用-http&#x2F;s-Burp&amp;Charles&amp;Fiddler  </p>
+<p>软件联动-http&#x2F;s-Proxifier&amp;Charles&amp;Burp</p>
+<h2 id="1-证书安装（不安装不能抓https）"><a href="#1-证书安装（不安装不能抓https）" class="headerlink" title="1.证书安装（不安装不能抓https）"></a>1.证书安装（不安装不能抓https）</h2><h3 id="（1）charles工具"><a href="#（1）charles工具" class="headerlink" title="（1）charles工具"></a>（1）charles工具</h3><ul>
+<li><p>获取保存证书：</p>
+<p>进入茶杯，帮助-SSL代理-保存证书<img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410262037671.png"></p>
+</li>
+<li><p>安装证书：</p>
+<p>证书拖到模拟器内-设置-安全性-证书</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410262041665.png"></p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410262044647.png"></p>
+</li>
+</ul>
+<h3 id="（2）Fiddler工具"><a href="#（2）Fiddler工具" class="headerlink" title="（2）Fiddler工具"></a>（2）Fiddler工具</h3><ul>
+<li><p>获取保存证书：<br><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410262100303.png"></p>
+</li>
+<li><p>使用场景</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410262118964.png"></p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410262131168.png"></p>
+</li>
+</ul>
+<h3 id="（3）burpsuite工具"><a href="#（3）burpsuite工具" class="headerlink" title="（3）burpsuite工具"></a>（3）burpsuite工具</h3><p>导出为.der即可</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410262108485.png"></p>
+<p>浏览器记得加入证书和配置代理</p>
+<p>抓模拟器时需<strong>注意</strong>：bp里面代理设置本机ip:8080（端口与模拟器设置一致即可），因为本地有很多张网卡</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410262227778.png"></p>
+<p>然后模拟器一样</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410262228253.png"></p>
+<h3 id="（4）茶杯转发数据到burpsuite配合使用–解决微信等代理问题"><a href="#（4）茶杯转发数据到burpsuite配合使用–解决微信等代理问题" class="headerlink" title="（4）茶杯转发数据到burpsuite配合使用–解决微信等代理问题"></a>（4）茶杯转发数据到burpsuite配合使用–解决微信等代理问题</h3><p>茶杯配置：代理-外部代理设置</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410262245326.png"></p>
+<h3 id="（5）proxifier代理工具-burpsuite抓包微信小程序"><a href="#（5）proxifier代理工具-burpsuite抓包微信小程序" class="headerlink" title="（5）proxifier代理工具+burpsuite抓包微信小程序"></a>（5）proxifier代理工具+burpsuite抓包微信小程序</h3><p>添加代理服务器与burpsuite一致</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410271422878.png"></p>
+<p>设置代理规则，以便只抓wechat开头的所有程序的流量基于进程或域名选择性的抓</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410271437254.png"></p>
+<h3 id="（6）抓不到有些包的问题：某些程序权限很高，抓包工具权限不够"><a href="#（6）抓不到有些包的问题：某些程序权限很高，抓包工具权限不够" class="headerlink" title="（6）抓不到有些包的问题：某些程序权限很高，抓包工具权限不够"></a>（6）抓不到有些包的问题：某些程序权限很高，抓包工具权限不够</h3>
 </div>
 
 <!-- post-guide -->
@@ -292,16 +332,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day1/">
+              <a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day7/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  小迪安全2024day1
+                  小迪安全2024day7
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2024/11/06/Linux/Linux%E5%9F%BA%E7%A1%80%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
-                Linux基础思维导图
+              <a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day3/">
+                小迪安全2024day3
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
