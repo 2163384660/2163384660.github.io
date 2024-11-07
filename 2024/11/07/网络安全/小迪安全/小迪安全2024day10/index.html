@@ -8,6 +8,8 @@
 	<!-- title -->
 	
 	<title>
+	
+		小迪安全2024day10 | 
 	 
 	十二亿七千光年的笔记本
 	</title>
@@ -197,7 +199,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2024/11/07/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day10/">
                      
 										    小迪安全2024day10
@@ -309,85 +311,175 @@
 
 	<!-- 引入正文 -->
 	<div id="content" class="content">
-		<div id="index">
-	
-		<div class="index-li">
-			<a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day7/">
-				<h2 class="index-title">
-					小迪安全2024day7
-				</h2>
-				<div class="index-brief">
-					基础入门-抓包技术&amp;全局协议&amp;封包监听&amp;网卡模式&amp;APP&amp;小程序&amp;PC应用1、抓包技术-全局-APP&amp;小程序&amp;PC应用2、抓包工具-Wireshark&amp;科来分析&amp;封包封包监听工具-通讯发送-APP应用
-科来分析-APP&
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-11-06</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day8/">
-				<h2 class="index-title">
-					小迪安全2024day8
-				</h2>
-				<div class="index-brief">
-					基础入门-算法分析&amp;传输加密&amp;数据格式&amp;密文存储&amp;代码混淆&amp;逆向保护传输数据-编码型&amp;加密型等例：
--某视频
--某Web站
--博客登录
--APP-斗地主
-影响：漏洞探针
-传输数据时需使用其相同的编码或加密
-例1：正常
-1https://indialms
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-11-06</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day9/">
-				<h2 class="index-title">
-					小迪安全2024day8
-				</h2>
-				<div class="index-brief">
-					算法加密-概念&amp;分类&amp;类型1.单向散列加密 -MD5
-优点(以MD5为例)：
-方便存储，损耗低：加密&#x2F;加密对于性能的损耗微乎其微。
+		<h1 id="article-title">
+	小迪安全2024day10
+</h1>
 
-缺点：
-存在暴力破解的可能性，最好通过加盐值的方式提高安全性，此外可能存在散列冲突。我们都知道MD5加密也是可以破解的。
+<!-- meta -->
+<div class="article-meta">
+	
 
-常见的单向散列加
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-11-06</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-	
-	<div id="index-paginator">
-		
-			<a class="extend prev" rel="prev" href="/archives/2024/11/">&lt;</a><a class="page-number" href="/archives/2024/11/">1</a><span class="page-number current">2</span>
-		
-	</div>
+	<span>十二亿七千光年</span>
+	<span>2024-11-07 20:44:36</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
 </div>
+
+<!-- content -->
+<div id="article-content">
+	<hr>
+<p>title: 小迪安全2024day8</p>
+<p>date: 2024-11-06</p>
+<p>–</p>
+<h1 id="基础入门-HTTP-数据包-Postman-构造-请求方法-请求头修改-状态码判断"><a href="#基础入门-HTTP-数据包-Postman-构造-请求方法-请求头修改-状态码判断" class="headerlink" title="基础入门-HTTP 数据包&amp;Postman 构造&amp;请求方法&amp;请求头修改&amp;状态码判断"></a>基础入门-HTTP 数据包&amp;Postman 构造&amp;请求方法&amp;请求头修改&amp;状态码判断</h1><h2 id="1-web服务流程："><a href="#1-web服务流程：" class="headerlink" title="1.web服务流程："></a>1.web服务流程：</h2><p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411071816314.png"></p>
+<h2 id="2-request请求-（get和post最为常见）"><a href="#2-request请求-（get和post最为常见）" class="headerlink" title="2.request请求 （get和post最为常见）"></a>2.request请求 （get和post最为常见）</h2><ul>
+<li><p>参数解释：</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411071820906.png"></p>
+</li>
+<li><p>参数作用：</p>
+<p>User-Agent（UA 头）：设备平台 - 电脑和手机访问，不同设备访问的UA头都不一样，网页返回的数据、页面可能也有所差别（电脑和手机）</p>
+<p>Cookie：身份替换 - 有时替换cookie可以进入不同用户登录的页面</p>
+</li>
+<li><p>get请求 – 常规请求</p>
+<ul>
+<li><p>结构：</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411071821953.png"></p>
+</li>
+<li><p>作用：向特定资源发出请求（请求指定页面信息，并返回实体主体）</p>
+</li>
+</ul>
+</li>
+<li><p>post请求 – 用户登录</p>
+<ul>
+<li><p>结构</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411071822630.png"></p>
+</li>
+<li><p>作用：向指定资源提交数据进行处理请求（提交表单、上传文件），又可能导致新的资源的建立或原有资源的修改</p>
+</li>
+</ul>
+</li>
+<li><p>head请求</p>
+<p>与服务器索与 get 请求一致的相应，响应体不会返回，获取包含在小消息头中 的原信息（与get请求类似，返回的响应中没有具体内容，用于获取报头）</p>
+</li>
+<li><p>put请求</p>
+<p>向指定资源位置上上传其最新内容（从客户端向服务器传送的数据取代指定文档的内容），与post的区别是put为幂等，post为非幂等</p>
+</li>
+<li><p>trace请求</p>
+<p>回显服务器收到的请求，用于测试和诊断。trace是http8种请求方式之中最安全的</p>
+</li>
+<li><p>delete – 请求服务器删除页面</p>
+<p>请求服务器删除 request-URL 所标示的资源</p>
+</li>
+<li><p>option – 允许客户 端查看服务器性能</p>
+<p>返回服务器针对特定资源所支持的 HTML 请求方法或web服务器发送测试服务器功能</p>
+</li>
+<li><p>connect</p>
+<p>HTTP&#x2F;1.1 协议中能够将连接改为管道方式的代理服务器</p>
+</li>
+</ul>
+<h2 id="3-response响应"><a href="#3-response响应" class="headerlink" title="3.response响应"></a>3.response响应</h2><ul>
+<li><p>参数解释：</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411071836358.png"></p>
+</li>
+<li><p>响应状态码：</p>
+<ul>
+<li><p>分类：</p>
+<p>1、数据是否正常 </p>
+<p>2、文件是否存在 </p>
+<p>3、地址自动跳转 </p>
+<p>4、服务提供错误</p>
+</li>
+<li><p>详细状态：</p>
+<p>1xx:指示信息—表示请求已接收，继续处理。 </p>
+<p>2xx:成功—表示请求已经被成功接收、理解、接受。 </p>
+<p>3xx:重定向—要完成请求必须进行更进一步的操作。</p>
+<p>4xx:客户端错误—请求有语法错误或请求无法实现。 </p>
+<p>5xx:服务器端错误—服务器未能实现合法的请求。</p>
+<p>200 OK： 客户端请求成功</p>
+<p>301 redirect： 页面永久性移走</p>
+<p>302 redirect： 页面暂时性移走，服务器进行重定向跳转，具有被劫持的安全风险</p>
+<p>400 BadRequest： 由于客户端请求有语法错误，不能被服务器所理解</p>
+<p>401 Unauthonzed： 请求未经授权</p>
+<p>403 Forbidden： 服务器收到请求，但是拒绝提供服务</p>
+<p>404 NotFound： 请求的资源不存在，例如：输入了错误的URL</p>
+<p>500 InternalServerError： 服务器发生了不可预期的错误，无法完成客户端的请求</p>
+<p>503 ServiceUnavailable： 服务器当前不能够处理客户端的请求</p>
+</li>
+<li><p>以文件判断：</p>
+<p>200 文件存在</p>
+<p>404 文件不存在</p>
+<p>403 文件夹存在</p>
+<p>500 可能存在可能不存在</p>
+<p>3xx 可能存在可能不存在</p>
+</li>
+<li><p>例：</p>
+<p>&#x2F;zb_system&#x2F; 403</p>
+<p>&#x2F;zb_system&#x2F;admin&#x2F;index.php 200</p>
+<p>&#x2F;zb_system&#x2F;admin&#x2F; 200(为什么不是403) 指引–&gt; &#x2F;zb_system&#x2F;admin&#x2F;index.php</p>
+<p>3xx响应：</p>
+<ul>
+<li>容错处理 网站访问错误就自动跳转到某个页面 不存在</li>
+<li>访问某个文件 自动触发跳转 存在</li>
+</ul>
+</li>
+<li><p>使用实例： 目录扫描</p>
+<p>目录扫描原理，字典爆破，根据状态码判断文件或目录是否存在</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-postman工具"><a href="#4-postman工具" class="headerlink" title="4.postman工具"></a>4.postman工具</h2><p>api接口测试工具，发包改包</p>
+<h2 id="5-其他问题："><a href="#5-其他问题：" class="headerlink" title="5.其他问题："></a>5.其他问题：</h2><ul>
+<li><p>不同设备访问百度的页面不一样</p>
+<p>请求包UserAgent字段不同</p>
+</li>
+<li><p>sqlmap有注入点却注入不了 –&gt; 数据包问题</p>
+<p>sqlmap -u <code>www.xiaodi8.com/x.php?id=1</code> 不存在 默认sqlmap访问头部进行注入</p>
+<p>找到数据包 <code>www.xiaodi8.com/x.php?id=1</code></p>
+<p>sqlmap -r data.txt 存在 采用自己提交的数据包进行访问</p>
+</li>
+</ul>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2024/11/06/python/Python%E5%9F%BA%E7%A1%80%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
+                Python基础思维导图
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
 
 	</div>
 	<div id="footer">
