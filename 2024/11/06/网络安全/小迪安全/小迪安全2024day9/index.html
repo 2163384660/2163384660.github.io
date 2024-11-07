@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		小迪安全2024day2 | 
+		小迪安全2024day8 | 
 	 
 	十二亿七千光年的笔记本
 	</title>
@@ -199,7 +199,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day2/">
                      
 										    小迪安全2024day2
@@ -276,7 +276,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day9/">
                      
 										    小迪安全2024day9
@@ -301,7 +301,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	小迪安全2024day2
+	小迪安全2024day8
 </h1>
 
 <!-- meta -->
@@ -327,86 +327,101 @@
 
 <!-- content -->
 <div id="article-content">
-	<h1 id="各种方法搭建网站的差异，拿到权限后："><a href="#各种方法搭建网站的差异，拿到权限后：" class="headerlink" title="各种方法搭建网站的差异，拿到权限后："></a>各种方法搭建网站的差异，拿到权限后：</h1><h2 id="1-宝塔"><a href="#1-宝塔" class="headerlink" title="1.宝塔"></a>1.宝塔</h2><ul>
-<li><p>文件管理：锁定目录</p>
+	<h1 id="算法加密-概念-分类-类型"><a href="#算法加密-概念-分类-类型" class="headerlink" title="算法加密-概念&amp;分类&amp;类型"></a>算法加密-概念&amp;分类&amp;类型</h1><h2 id="1-单向散列加密-MD5"><a href="#1-单向散列加密-MD5" class="headerlink" title="1.单向散列加密 -MD5"></a>1.单向散列加密 -MD5</h2><ul>
+<li><p>优点(以MD5为例)：</p>
+<p>方便存储，损耗低：加密&#x2F;加密对于性能的损耗微乎其微。</p>
 </li>
-<li><p>命令执行：无法执行</p>
+<li><p>缺点：</p>
+<p>存在暴力破解的可能性，最好通过加盐值的方式提高安全性，此外可能存在散列冲突。我们都知道MD5加密也是可以破解的。</p>
 </li>
-</ul>
-<h2 id="2-phpstudy（创建网站时安全选项默认关闭）-管理员权限"><a href="#2-phpstudy（创建网站时安全选项默认关闭）-管理员权限" class="headerlink" title="2.phpstudy（创建网站时安全选项默认关闭）-管理员权限"></a>2.phpstudy（创建网站时安全选项默认关闭）-管理员权限</h2><ul>
-<li><p>文件管理：可以访问目录</p>
+<li><p>常见的单向散列加密算法：</p>
+<p>MD5 SHA MAC CRC</p>
 </li>
-<li><p>命令执行：可以执行，whoami后返回信息</p>
-</li>
-</ul>
-<h2 id="3-自己搭建的IIS-普通用户权限"><a href="#3-自己搭建的IIS-普通用户权限" class="headerlink" title="3.自己搭建的IIS-普通用户权限"></a>3.自己搭建的IIS-普通用户权限</h2><ul>
-<li><p>文件管理：可以访问至上一级</p>
-</li>
-<li><p>命令执行：一些命令可以执行，另外一些拒绝访问</p>
+<li><p>解密：</p>
+<p>解密需求：密文即可，但复杂明文可能解不出</p>
+<p>解密方式：碰撞</p>
 </li>
 </ul>
-<h2 id="4-docker"><a href="#4-docker" class="headerlink" title="4.docker"></a>4.docker</h2><ul>
-<li><p>虚拟空间，非真实</p>
+<h2 id="2-对称加密-AES"><a href="#2-对称加密-AES" class="headerlink" title="2.对称加密 -AES"></a>2.对称加密 -AES</h2><ul>
+<li><p>优点：</p>
+<p>算法公开、计算量小、加密速度快、加密效率高。</p>
 </li>
-<li><p>技术：docker逃逸，从虚拟空间逃逸到真实空间上</p>
+<li><p>缺点：</p>
+<p>发送方和接收方必须商定好密钥，然后使双方都能保存好密钥，密钥管理成为双方的负担。</p>
+</li>
+<li><p>常见的对称加密算法：</p>
+<p>DES AES RC4</p>
+</li>
+<li><p>解密：</p>
+<p>解密方式：使用密匙（key）解密，算法逆向，大多数时候还需要偏移量</p>
+</li>
+</ul>
+<h2 id="3-非对称加密-RSA"><a href="#3-非对称加密-RSA" class="headerlink" title="3.非对称加密 -RSA"></a>3.非对称加密 -RSA</h2><ul>
+<li><p>优点：</p>
+<p>与对称加密相比，安全性更好，加解密需要不同的密钥，公钥和私钥都可进行相互的加解密。</p>
+</li>
+<li><p>缺点：</p>
+<p>加密和解密花费时间长、速度慢，只适合对少量数据进行加密。</p>
+</li>
+<li><p>常见的非对称加密算法：</p>
+<p>RSA RSA2 PKCS</p>
+</li>
+<li><p>解密：</p>
+<p>解密方式：使用公钥和私钥都可以解密</p>
 </li>
 </ul>
 <hr>
-<h1 id="Web架构-集成软件-Docker容器-分配站"><a href="#Web架构-集成软件-Docker容器-分配站" class="headerlink" title="Web架构-集成软件&amp;Docker容器&amp;分配站"></a>Web架构-集成软件&amp;Docker容器&amp;分配站</h1><h2 id="1-WEB架构"><a href="#1-WEB架构" class="headerlink" title="1.WEB架构"></a>1.WEB架构</h2><h3 id="（1）常规化："><a href="#（1）常规化：" class="headerlink" title="（1）常规化："></a>（1）常规化：</h3><ul>
-<li><p>原理：源码和数据都在同服务器上</p>
+<h1 id="加密解密-识别特征-解密条件"><a href="#加密解密-识别特征-解密条件" class="headerlink" title="加密解密-识别特征&amp;解密条件"></a>加密解密-识别特征&amp;解密条件</h1><h2 id="1-MD5密文特点："><a href="#1-MD5密文特点：" class="headerlink" title="1.MD5密文特点："></a>1.MD5密文特点：</h2><ul>
+<li><p>特点：</p>
+<p>由数字“0-9”和字母“a-f”所组成的字符串</p>
+<p>固定的位数 16 和 32位</p>
 </li>
-<li><p>影响：无，常规安全测试手段</p>
-</li>
-</ul>
-<h3 id="（2）站库分离："><a href="#（2）站库分离：" class="headerlink" title="（2）站库分离："></a>（2）站库分离：</h3><ul>
-<li><p>原理：源码和数据库不在同服务器</p>
-</li>
-<li><p>存储：其他服务器上的数据库&amp;云数据库产品</p>
-</li>
-<li><p>影响：数据被单独存放，能连接才可影响数据</p>
+<li><p>解密需求：密文即可，但复杂明文可能解不出</p>
 </li>
 </ul>
-<h3 id="（3）前后端分离："><a href="#（3）前后端分离：" class="headerlink" title="（3）前后端分离："></a>（3）前后端分离：</h3><ul>
-<li><p>原理：前端JS框架，使用API传输数据</p>
-</li>
-<li><p>影响：</p>
-<ul>
-<li><p>前端页面大部分不存在漏洞</p>
-</li>
-<li><p>后端管理大部分不在同域名</p>
-</li>
-<li><p>获得权限有可能不影响后端</p>
+<h2 id="2-BASE64编码特点："><a href="#2-BASE64编码特点：" class="headerlink" title="2. BASE64编码特点："></a>2. BASE64编码特点：</h2><ul>
+<li><p>特点：</p>
+<p>大小写区分，通过数字和字母的组合</p>
+<p>一般情况下密文尾部都会有两个等号，明文很少的时候则没有</p>
+<p>明文越长密文越长，一般不会出现”&#x2F;“”+”在密文中</p>
 </li>
 </ul>
+<h2 id="3-AES、DES密文特点："><a href="#3-AES、DES密文特点：" class="headerlink" title="3.AES、DES密文特点："></a>3.AES、DES密文特点：</h2><ul>
+<li><p>特点：同BASE64基本类似，但一般会出现”&#x2F;“和”+”在密文中</p>
+</li>
+<li><p>解密需求：密文，模式，密钥Key，偏移量，条件满足才可解出</p>
 </li>
 </ul>
-<h2 id="2-集成软件"><a href="#2-集成软件" class="headerlink" title="2.集成软件"></a>2.集成软件</h2><h3 id="宝塔，phpstudy："><a href="#宝塔，phpstudy：" class="headerlink" title="宝塔，phpstudy："></a>宝塔，phpstudy：</h3><ul>
-<li><p>原理：打包类集成环境，权限配置或受控制</p>
+<h2 id="4-RSA密文特点："><a href="#4-RSA密文特点：" class="headerlink" title="4.RSA密文特点："></a>4.RSA密文特点：</h2><ul>
+<li><p>特点：特征同AES,DES相似，但是长度较长（固定在一个范围内），每次加密后的密文都不一样但都能还原解密出来</p>
 </li>
-<li><p>影响：攻击者权限对比区别</p>
-</li>
-</ul>
-<h2 id="3-docker容器"><a href="#3-docker容器" class="headerlink" title="3.docker容器"></a>3.docker容器</h2><h3 id="docker容器："><a href="#docker容器：" class="headerlink" title="docker容器："></a>docker容器：</h3><ul>
-<li><p>原理：虚拟化技术独立磁盘空间，非真实物理环境</p>
-</li>
-<li><p>影响：攻击者进入虚拟磁盘</p>
+<li><p>解密需求：密文，公钥加密对应私钥解密，私钥加密对应公钥解密</p>
 </li>
 </ul>
-<h2 id="4-建站分配站"><a href="#4-建站分配站" class="headerlink" title="4.建站分配站"></a>4.建站分配站</h2><h3 id="（1）托管"><a href="#（1）托管" class="headerlink" title="（1）托管"></a>（1）托管</h3><h3 id="（2）申请"><a href="#（2）申请" class="headerlink" title="（2）申请"></a>（2）申请</h3><p>原理：利用别人的域名模板建立</p>
-<p>影响：实质安全测试非目标资产。如csdn申请自己的博客或者自己的QQ空间之类的，是从大的分配下来的，测试的为提供服务的总部的资产</p>
-<h2 id="5-静态WEB"><a href="#5-静态WEB" class="headerlink" title="5.静态WEB"></a>5.静态WEB</h2><ul>
-<li><p>例子：大学学html设计的网站</p>
+<hr>
+<h1 id="解密实例-密文存储-数据传输"><a href="#解密实例-密文存储-数据传输" class="headerlink" title="解密实例-密文存储&amp;数据传输"></a>解密实例-密文存储&amp;数据传输</h1><h2 id="安全测试解密逻辑："><a href="#安全测试解密逻辑：" class="headerlink" title="安全测试解密逻辑："></a>安全测试解密逻辑：</h2><ul>
+<li><p>密文-有源码：</p>
+<p>直接看源码分析算法（后端必须要有源码才能彻底知道）</p>
 </li>
-<li><p>特点：页面较为单调</p>
-</li>
-<li><p>原理：数据没有传输性（js传输不算）</p>
-</li>
-<li><p>影响：无漏洞</p>
+<li><p>密文-没有源码：</p>
+<p>1.猜是什么加密</p>
+<p>2.看前端JS（加密逻辑在前端）:F12或抓包看前端js代码逻辑</p>
 </li>
 </ul>
-<h2 id="6-伪静态"><a href="#6-伪静态" class="headerlink" title="6.伪静态"></a>6.伪静态</h2><ul>
-<li>动态转为静态的技术，伪装的静态</li>
+<h2 id="实例1：mysql数据库password字段被加密了，查看源码发现加密的逻辑（前端处理）"><a href="#实例1：mysql数据库password字段被加密了，查看源码发现加密的逻辑（前端处理）" class="headerlink" title="实例1：mysql数据库password字段被加密了，查看源码发现加密的逻辑（前端处理）"></a>实例1：mysql数据库password字段被加密了，查看源码发现加密的逻辑（前端处理）</h2><h3 id="加密代码段："><a href="#加密代码段：" class="headerlink" title="加密代码段："></a>加密代码段：</h3><p>$password &#x3D; md5(md5($password).$salt)</p>
+<h3 id="已知："><a href="#已知：" class="headerlink" title="已知："></a>已知：</h3><ul>
+<li>明文：123456</li>
+<li>salt：3946d5</li>
 </ul>
+<h3 id="加密逻辑："><a href="#加密逻辑：" class="headerlink" title="加密逻辑："></a>加密逻辑：</h3><p>首次加密：md5(123456) &#x3D; e10adc3949ba59abbe56e057f20f883e</p>
+<p>加盐： .salt &#x3D; e10adc3949ba59abbe56e057f20f883e3946d5 （ . 为连接符，把字符3946d5加到后面）</p>
+<p>最终结果： md5(e10adc3949ba59abbe56e057f20f883e3946d5) &#x3D; d7192407bb4bfc83d28f374b6812fbcd</p>
+<p>php解密脚本：碰撞</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$password</span>=<span class="string">&#x27;123456&#x27;</span>;</span><br><span class="line"><span class="variable">$salt</span>=<span class="string">&#x27;3946d5&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$a</span>=<span class="title function_ invoke__">md5</span>(<span class="variable">$password</span>);</span><br><span class="line"><span class="variable">$aa</span>=<span class="variable">$a</span>.<span class="variable">$salt</span>;</span><br><span class="line"><span class="variable">$aaa</span>=<span class="title function_ invoke__">md5</span>(<span class="variable">$aa</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$aaa</span>==<span class="string">&#x27;d7192407bb4bfc83d28f374b6812fbcd&#x27;</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;ok&#x27;</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;no&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="实例2：前端登录输入的密码被进行md5加密，加密逻辑在js文件中（前端处理）"><a href="#实例2：前端登录输入的密码被进行md5加密，加密逻辑在js文件中（前端处理）" class="headerlink" title="实例2：前端登录输入的密码被进行md5加密，加密逻辑在js文件中（前端处理）"></a>实例2：前端登录输入的密码被进行md5加密，加密逻辑在js文件中（前端处理）</h2><p>zblog </p>
+<h2 id="实例3：sql注入参数使用AES加密（后端处理）"><a href="#实例3：sql注入参数使用AES加密（后端处理）" class="headerlink" title="实例3：sql注入参数使用AES加密（后端处理）"></a>实例3：sql注入参数使用AES加密（后端处理）</h2><p><code>https://mozhe.cn/bug/detail/110</code></p>
+<p>注入时需要先进行加密分析，再把注入语句进行加密然后进行传参</p>
 
 </div>
 
@@ -415,18 +430,13 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day1/">
+              <a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day8/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  小迪安全2024day1
+                  小迪安全2024day8
               </a>
             
         </div>
         <div class="item right">
-            
-              <a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82024day3/">
-                小迪安全2024day3
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
             
         </div>
     </div>
