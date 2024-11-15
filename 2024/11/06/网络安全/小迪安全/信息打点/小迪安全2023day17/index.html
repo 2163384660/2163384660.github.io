@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		mysql思维导图 | 
+		小迪安全2023day17 | 
 	 
 	十二亿七千光年的笔记本
 	</title>
@@ -155,7 +155,7 @@
 									</a>
 									
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2024/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/mysql%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
                      
 										    mysql思维导图
@@ -250,7 +250,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023day17/">
                      
 										    小迪安全2023day17
@@ -411,7 +411,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	mysql思维导图
+	小迪安全2023day17
 </h1>
 
 <!-- meta -->
@@ -437,7 +437,101 @@
 
 <!-- content -->
 <div id="article-content">
-	<h1 id="mysql思维导图"><a href="#mysql思维导图" class="headerlink" title="mysql思维导图"></a>mysql思维导图</h1><p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411061806173.png"></p>
+	<h1 id="信息打点-语言框架-开发组件-FastJson-Shiro-Log4j-SpringBoot-等"><a href="#信息打点-语言框架-开发组件-FastJson-Shiro-Log4j-SpringBoot-等" class="headerlink" title="信息打点-语言框架&amp;开发组件&amp;FastJson&amp;Shiro&amp;Log4j&amp;SpringBoot 等"></a>信息打点-语言框架&amp;开发组件&amp;FastJson&amp;Shiro&amp;Log4j&amp;SpringBoot 等</h1><h2 id="CMS指纹识别"><a href="#CMS指纹识别" class="headerlink" title="CMS指纹识别"></a>CMS指纹识别</h2><ul>
+<li>局限性：CMS识别大部分针对PHP开放的web环境，java和python等会有问题</li>
+</ul>
+<h2 id="后端-前端-组件-框架"><a href="#后端-前端-组件-框架" class="headerlink" title="后端&amp;前端&amp;组件&amp;框架"></a>后端&amp;前端&amp;组件&amp;框架</h2><ul>
+<li><p>后端：<br>CMS：一般使用PHP源码程序开发居多（利用源码程序名去搜集现有漏洞情况，或使用源码去下载进行后期的代码审计）</p>
+</li>
+<li><p>前端：<br>JS框架（爬取更多的js，从里面筛选URL或敏感泄露key等）也是通过对js代码逻辑进行代码审计</p>
+</li>
+<li><p>组件：</p>
+<p>java居多，常见有过安全漏洞组件：shiro, solr, log4j, sprintboot等</p>
+</li>
+<li><p>框架： </p>
+<p>php, java, python都有</p>
+</li>
+</ul>
+<h2 id="WEB架构："><a href="#WEB架构：" class="headerlink" title="WEB架构："></a>WEB架构：</h2><ul>
+<li><p>1.最简单、最入门的开发模型（功能代码全部手写）</p>
+<p>最容易出现漏洞，程序员水平不一，没有第三方或团队的检测，单纯自己手写</p>
+</li>
+<li><p>2.结合开发框架的开发模型（以框架为核心实现功能）</p>
+<p>第三方或团队的开发的封装代码框架，一般内置过滤机制（但可能存在框架漏洞）</p>
+</li>
+<li><p>3.结合开发框架外加组件模型（以框架为核心，组件为辅助实现功能）</p>
+<p>第三方或团队的开发的封装代码框架和组件，一般内置过滤机制（但可能存在框架和组件漏洞）</p>
+</li>
+</ul>
+<h2 id="开发框架"><a href="#开发框架" class="headerlink" title="开发框架"></a>开发框架</h2><ul>
+<li><p>简单代码的一个整合库，如果使用框架就只需要学习框架调用即可</p>
+<p>如：文件上传功能是需要很多代码来实现的，框架把这个代码进行封装，调用即可</p>
+</li>
+<li><p>影响：如果采用框架开放，代码的安全性是取决于框架的过滤机制</p>
+<p>框架有漏洞-网站就有漏洞；框架没漏洞但扫出了漏洞-没有正确使用框架导致（如程序一半用框架，一半自己写）</p>
+</li>
+</ul>
+<h2 id="开发组件"><a href="#开发组件" class="headerlink" title="开发组件"></a>开发组件</h2><ul>
+<li>第三方的功能模块（日志记录、数据监控、数据转换等），框架没有的功能、拓展功能</li>
+</ul>
+<h2 id="指纹识别-本地识别"><a href="#指纹识别-本地识别" class="headerlink" title="指纹识别-本地识别"></a>指纹识别-本地识别</h2><ul>
+<li>工具：gotoscan</li>
+<li>浏览器插件：Wappalyzer</li>
+</ul>
+<h2 id="python-web开发框架-Django-Flask"><a href="#python-web开发框架-Django-Flask" class="headerlink" title="python-web开发框架-Django&amp;Flask"></a>python-web开发框架-Django&amp;Flask</h2><ul>
+<li><p>Django</p>
+<p>1.识别插件</p>
+<p>2.web返回数据包字段：Set-Cookie:expires&#x3D;</p>
+</li>
+<li><p>Flask</p>
+<p>1.识别插件</p>
+<p>2.web返回数据包字段（可能存在）：Set-Cookie:expires&#x3D;</p>
+</li>
+</ul>
+<h2 id="PHP-web开发框架-ThinkPHP-Laravel-Yii"><a href="#PHP-web开发框架-ThinkPHP-Laravel-Yii" class="headerlink" title="PHP-web开发框架-ThinkPHP&amp;Laravel&amp;Yii"></a>PHP-web开发框架-ThinkPHP&amp;Laravel&amp;Yii</h2><ul>
+<li><p>ThinkPHP:</p>
+<p>1.识别插件</p>
+<p>2.web返回数据包字段：X-Powered-By:ThinkPHP</p>
+<p>3.网站图标判断</p>
+<p>4.CMS识别到源码查找:ThinkPHP开发源码查找,如：<code>down.chinaz.com</code>平台尝试查找开发使用的源码–&gt;寻找漏洞</p>
+</li>
+<li><p>Laravel：</p>
+<p>1.识别插件</p>
+<p>2.Set-Cookie中的特征格式</p>
+</li>
+<li><p>Yii</p>
+<p>1.识别插件</p>
+<p>2.Set-Cookie中的特征格式</p>
+</li>
+</ul>
+<h2 id="JAVA-web开发框架组件-Fastjson-Shiro-Solr-Spring"><a href="#JAVA-web开发框架组件-Fastjson-Shiro-Solr-Spring" class="headerlink" title="JAVA-web开发框架组件-Fastjson&amp;Shiro&amp;Solr&amp;Spring"></a>JAVA-web开发框架组件-Fastjson&amp;Shiro&amp;Solr&amp;Spring</h2><p>52类101个主流Java组件和框架介绍：<code>https://blog.csdn.net/agonie201218/article/details/125300729</code></p>
+<ul>
+<li><p>Fastjson&#x2F;Jackson</p>
+<p>在提交JSON数据包中修改测试：<code>https://forum.butian.net/share/1679</code>;</p>
+<ul>
+<li>Fastison组件会把01解析成1</li>
+<li>Jackson组件在解析01时会抛出异常</li>
+</ul>
+</li>
+<li><p>Shiro</p>
+<p>请求包的cookie中存在rememberMe字段</p>
+<p>返回包中存在set-Cookie: remeberMe&#x3D;deleteMe</p>
+<p>请求包中存在rememberMe&#x3D;x时，响应包中存在rememberMe&#x3D;deleteMe</p>
+<p>有时候服务器不会主动返回remeberMe&#x3D;deleteMe，直接发包即可，将Cookie内容改为remember Me&#x3D;1,若相应包有rememberMe&#x3D;deleteMe,则基本可以确定网站apache shiro搭建的</p>
+</li>
+<li><p>Struts2</p>
+<p>一般使用struts2框架URL后缀带do或action，可以尝试进行利用</p>
+</li>
+<li><p>Springboot</p>
+<p>通过web应用程序网页标签的小绿叶图标</p>
+<p>通过springboot框架默认报错页面</p>
+</li>
+<li><p>Solr识别</p>
+<p>网站图标判断</p>
+<p>一般开放8983端口，访问页面也可以探针到</p>
+</li>
+<li></li>
+</ul>
 
 </div>
 
@@ -446,18 +540,13 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/11/06/Linux/Linux%E5%9F%BA%E7%A1%80%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
+              <a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023day9/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  Linux基础思维导图
+                  小迪安全2023day9
               </a>
             
         </div>
         <div class="item right">
-            
-              <a href="/2024/11/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023day13/">
-                小迪安全2023day13
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
             
         </div>
     </div>
