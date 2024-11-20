@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>十二亿七千光年的笔记本</title>
+  <title>小迪安全2023day3 | 十二亿七千光年的笔记本</title>
   <meta name="keywords" content="">
-  <meta name="description" content="十二亿七千光年的笔记本">
+  <meta name="description" content="小迪安全2023day3 | 十二亿七千光年的笔记本">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="分类">
@@ -54,7 +54,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -490,18 +490,49 @@
 
     </div>
     <div class="hide-list">
-        <div class="semicircle" data-title="切换全屏 快捷键 s">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
             <div class="brackets first"><</div>
             <div class="brackets">&gt;</div>
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-网络安全/小迪安全/基础入门/小迪安全2023day3" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%8F%B6%E8%90%BD%E9%98%81"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">小迪安全2023day3</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-11-14 19:50:35'>2024-11-06 00:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web%E6%8B%93%E5%B1%95-CDN-WAF-OSS-%E5%8F%8D%E5%90%91-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="toc-text">Web拓展-CDN&amp;WAF&amp;OSS&amp;反向&amp;负载均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-WAF"><span class="toc-text">1.WAF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-CDN"><span class="toc-text">2.CDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-OSS"><span class="toc-text">3.OSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-text">4.反向代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="toc-text">5.负载均衡</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -514,33 +545,109 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阁主（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 生成，部署在 <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a>主题 <a target="_blank" rel="noopener" href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p><code>3-hexo</code> 主题使用交流可以加 Q群: <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e8cf083cc097141eaf323396f1766809b8e90ff00c67bb441898f672892f6904"><img data-ignore border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="3-hexo使用交流" title="3-hexo使用交流"></a></p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Web拓展-CDN-WAF-OSS-反向-负载均衡"><a href="#Web拓展-CDN-WAF-OSS-反向-负载均衡" class="headerlink" title="Web拓展-CDN&amp;WAF&amp;OSS&amp;反向&amp;负载均衡"></a>Web拓展-CDN&amp;WAF&amp;OSS&amp;反向&amp;负载均衡</h1><h2 id="1-WAF"><a href="#1-WAF" class="headerlink" title="1.WAF"></a>1.WAF</h2><ul>
+<li><p>原理：Web应用防火墙，旨在提供保护</p>
+</li>
+<li><p>影响：常规Web安全测试手段会受到拦截</p>
+</li>
+<li><p>演示：免费D盾防护软件</p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad&#x2F;手机等移动端适配</li>
-<li>页面全局快捷键 <a target="_blank" rel="noopener" href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
+<li>Windows2012 + IIS +D盾</li>
 </ul>
+</li>
+</ul>
+<h2 id="2-CDN"><a href="#2-CDN" class="headerlink" title="2.CDN"></a>2.CDN</h2><ul>
+<li><p>原理：内容分发服务，旨在提高访问速度，使用就近区域节点进行一个加速服务，访问时ip为节点ip</p>
+</li>
+<li><p>影响：隐藏真实源IP，导致对目标测试错误</p>
+</li>
+</ul>
+<p>演示：阿里云备案域名全局CDN加速服务</p>
+<p>Windows2012 + BT宝塔面板 + CDN服务</p>
+<h2 id="3-OSS"><a href="#3-OSS" class="headerlink" title="3.OSS"></a>3.OSS</h2><ul>
+<li><p>原理：云存储服务（存储数据），旨在提高访问速度</p>
+<p>为什么要使用第三方存储？</p>
+<ul>
+<li><p>1.静态文件会占用大量带宽</p>
+</li>
+<li><p>2.加载速度</p>
+</li>
+<li><p>3.存储空间</p>
+</li>
+</ul>
+</li>
+<li><p>影响：上传的文件或解析的文件均来自于OSS资源，无法解析，单独存储</p>
+<ul>
+<li><p>1.修复上传安全（文件上传漏洞）</p>
+</li>
+<li><p>2.文件解析不一样</p>
+</li>
+<li><p>3.但Accesskey隐患（云安全问题）</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>演示：</p>
+<p><a target="_blank" rel="noopener" href="https://cloudreve.org/">https://cloudreve.org/</a></p>
+<p>Windows2012 + cloudreve + 阿里云OSS</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/cloudreve/Cloudreve/releases/tag/3.7.1">https://github.com/cloudreve/Cloudreve/releases/tag/3.7.1</a></p>
+<p>1、启动应用</p>
+<p>2、登录管理</p>
+<p>3、配置存储信息</p>
+<p>4、更改用户组存储属性</p>
+<p>阿里云OSS:</p>
+<p>1、开通OSS</p>
+<p>2、新建Bucket</p>
+<p>3、配置Bucket属性</p>
+<p>4、配置Access访问</p>
+<h2 id="4-反向代理"><a href="#4-反向代理" class="headerlink" title="4.反向代理"></a>4.反向代理</h2><ul>
+<li><p>正向代理为客户端服务</p>
+<p>客户端主动建立代理访问目标（不代理不可达）</p>
+<p>如：翻墙</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410212302889.png"></p>
+</li>
+<li><p>反向代理为服务端服务</p>
+<p>服务器主动转发数据给可访问地址（不主动不可达）</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202410212303669.png"></p>
+</li>
+<li><p>原理：通过网络进行反向代理转发真实服务达到目的</p>
+</li>
+<li><p>影响：访问目标只是一个代理服务器，非真实应用服务器</p>
+</li>
+<li><p>注意：正向代理和反向代理都是解决访问不可达的问题，但由于反向代理中多出一个可以重定向解析的功能操作，导致反向代理出的站点指向和真实应用毫无关系</p>
+<p>如访问<a target="_blank" rel="noopener" href="http://www.xxx.com是正常的站点,设置www.xxx.com/a%E8%AE%BF%E9%97%AE%E5%88%B0%E4%BA%86%E7%99%BE%E5%BA%A6%E7%9A%84%E7%BD%91%E9%A1%B5%E3%80%82%E8%AE%BE%E7%BD%AE%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%88%B0%E5%85%B6%E4%BB%96%E5%9C%B0%E6%96%B9">www.xxx.com是正常的站点，设置www.xxx.com/a访问到了百度的网页。设置后台管理反向代理到其他地方</a></p>
+</li>
+</ul>
+<p>演示：Nginx反向代理配置</p>
+<p>Windows2012 + BT宝塔面板 + Nginx</p>
+<h2 id="5-负载均衡"><a href="#5-负载均衡" class="headerlink" title="5.负载均衡"></a>5.负载均衡</h2><ul>
+<li><p>原理：分摊到多个操作单元上进行执行，共同完成工作任务。一个网站使用多台服务器，避免了天灾人祸造成的影响</p>
+</li>
+<li><p>影响：有多个服务器加载服务，测试过程中存在多个目标情况</p>
+</li>
+</ul>
+<p>演示：Nginx负载均衡配置</p>
+<p>Windows2012 + BT宝塔面板 + Nginx</p>
 
-        </article>
-        
-        
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -549,11 +656,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>十二亿七千光年的笔记本</title>
+  <title>小迪安全2023day16 | 十二亿七千光年的笔记本</title>
   <meta name="keywords" content="">
-  <meta name="description" content="十二亿七千光年的笔记本">
+  <meta name="description" content="小迪安全2023day16 | 十二亿七千光年的笔记本">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="分类">
@@ -54,7 +54,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -490,18 +490,49 @@
 
     </div>
     <div class="hide-list">
-        <div class="semicircle" data-title="切换全屏 快捷键 s">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
             <div class="brackets first"><</div>
             <div class="brackets">&gt;</div>
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-网络安全/小迪安全/信息打点/小迪安全2023day16" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%8F%B6%E8%90%BD%E9%98%81"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">小迪安全2023day16</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-11-14 19:48:34'>2024-11-06 00:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9-CDN%E7%BB%95%E8%BF%87-%E4%B8%9A%E5%8A%A1%E9%83%A8%E7%BD%B2-%E6%BC%8F%E6%B4%9E%E5%9B%9E%E9%93%BE-%E6%8E%A5%E5%8F%A3%E6%8E%A2%E9%92%88-%E5%85%A8%E7%BD%91%E6%89%AB%E6%8F%8F-%E5%8F%8D%E5%90%91%E9%82%AE%E4%BB%B6"><span class="toc-text">信息打点-CDN绕过&amp;业务部署&amp;漏洞回链&amp;接口探针&amp;全网扫描&amp;反向邮件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-text">前置知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN%E6%9C%8D%E5%8A%A1%E5%95%86"><span class="toc-text">CDN服务商</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN%E9%85%8D%E7%BD%AE"><span class="toc-text">CDN配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN%E5%88%A4%E5%AE%9A-%E8%AF%86%E5%88%AB"><span class="toc-text">CDN判定-识别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E7%BA%A7ping"><span class="toc-text">超级ping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%87%E6%A1%88%E5%8F%B7"><span class="toc-text">备案号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN%E7%BB%95%E8%BF%87"><span class="toc-text">CDN绕过</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%8A%A8%E6%BC%8F%E6%B4%9E"><span class="toc-text">主动漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%97%E7%95%99%E6%96%87%E4%BB%B6"><span class="toc-text">遗留文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%AE%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9A"><span class="toc-text">邮件系统：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%9F%A5%E8%AF%A2%EF%BC%88%E5%81%9A%E5%8F%82%E8%80%83%EF%BC%89"><span class="toc-text">接口查询（做参考）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E7%BD%91%E6%89%AB%E6%8F%8F"><span class="toc-text">全网扫描</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -514,33 +545,110 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阁主（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 生成，部署在 <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a>主题 <a target="_blank" rel="noopener" href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p><code>3-hexo</code> 主题使用交流可以加 Q群: <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e8cf083cc097141eaf323396f1766809b8e90ff00c67bb441898f672892f6904"><img data-ignore border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="3-hexo使用交流" title="3-hexo使用交流"></a></p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="信息打点-CDN绕过-业务部署-漏洞回链-接口探针-全网扫描-反向邮件"><a href="#信息打点-CDN绕过-业务部署-漏洞回链-接口探针-全网扫描-反向邮件" class="headerlink" title="信息打点-CDN绕过&amp;业务部署&amp;漏洞回链&amp;接口探针&amp;全网扫描&amp;反向邮件"></a>信息打点-CDN绕过&amp;业务部署&amp;漏洞回链&amp;接口探针&amp;全网扫描&amp;反向邮件</h1><h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><ul>
+<li><p>传统访问：用户访问域名–&gt;解析服务器IP–&gt;访问目标主机  </p>
+</li>
+<li><p>普通CDN：用户访问域名–&gt;CDN节点–&gt;真实服务器IP–&gt;访问目标主机</p>
+<p>加入CDN后，真实ip被隐藏了，影响信息搜集  </p>
+</li>
+<li><p>带WAF的CDN：用户访问域名–&gt;CDN节点（WAF）–&gt;真实服务器IP–&gt;访问目标主机</p>
+</li>
+</ul>
+<h2 id="CDN服务商"><a href="#CDN服务商" class="headerlink" title="CDN服务商"></a>CDN服务商</h2><ul>
+<li><p>国内：</p>
+<p>阿里云、百度云、七牛云、又拍云、腾讯云、Ucloud、360、网宿科技、ChinaCache</p>
+</li>
+<li><p>国外：</p>
+<p>CloudFlare、StackPath、Fastly、Akamai、CloudFront、Edgecast、CDNetworks、Google Cloud CDN、CacheFly、Keycdn、Udomain、CDN77</p>
+</li>
+</ul>
+<h2 id="CDN配置"><a href="#CDN配置" class="headerlink" title="CDN配置"></a>CDN配置</h2><p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411141450681.png"></p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad&#x2F;手机等移动端适配</li>
-<li>页面全局快捷键 <a target="_blank" rel="noopener" href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
+<li><p>加速域名：需要启用加速的域名</p>
+<p>利用子域名获取真实IP（与加速配置有关系）</p>
+<ul>
+<li>如果配置：<a target="_blank" rel="noopener" href="http://www.xiaodi8.com加速,bbs.xiaodi8.com和xiaodi8.com不加速,这两个域名都在同一个网段或ip下,可以利用查找其他子域名bbs.xiaodi8.com和xiaodi8.com的ip地址推断出www.xiaodi8.com的ip地址/">www.xiaodi8.com加速，bbs.xiaodi8.com和xiaodi8.com不加速，这两个域名都在同一个网段或ip下，可以利用查找其他子域名bbs.xiaodi8.com和xiaodi8.com的ip地址推断出www.xiaodi8.com的IP地址</a></li>
+<li>如果配置*.xiaodi8.com加速，就不能推断出出真实地址</li>
+</ul>
+</li>
+<li><p>加速区域：需要启用加速的地区-按照用户群体选择</p>
+<p>国外访问获取真实ip</p>
+<ul>
+<li>加速区域没有配置全球加速时，可以通过国外的ip进行访问，以获取真实地址</li>
+</ul>
+</li>
+<li><p>加速类型：需要启用加速的资源</p>
+</li>
+</ul>
+<h2 id="CDN判定-识别"><a href="#CDN判定-识别" class="headerlink" title="CDN判定-识别"></a>CDN判定-识别</h2><h3 id="超级ping"><a href="#超级ping" class="headerlink" title="超级ping"></a>超级ping</h3><p>超级Ping：<code>http://www.17ce.com/ </code></p>
+<p>超级Ping：<code>https://ping.chinaz.com/</code></p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411141516795.png"></p>
+<p>看不同地区的响应ip是否一致，如果出现了多个ip说明部署了CDN</p>
+<h3 id="备案号"><a href="#备案号" class="headerlink" title="备案号"></a>备案号</h3><p>还可以查看网站底部备案号进一步猜测真实ip</p>
+<h2 id="CDN绕过"><a href="#CDN绕过" class="headerlink" title="CDN绕过"></a>CDN绕过</h2><p><code>https://mp.weixin.qq.com/s/zxEH-HMqKukmq7qXfrdnQQ</code></p>
+<p>常见方法：子域名，邮件系统，国外访问，证书查询，备案信息，APP抓包，网络空间，通过漏洞或泄露获取，扫全网，以量打量，第三方接口查询等</p>
+<h3 id="主动漏洞"><a href="#主动漏洞" class="headerlink" title="主动漏洞"></a>主动漏洞</h3><p>如SSRF、RCE漏洞：利用漏洞让对方真实服务器主动出网连接，判断来源IP即真实IP。网站主动向自己服务器请求加载一些东西，然后泄露地址–&gt;让它主动出来找你</p>
+<h3 id="遗留文件"><a href="#遗留文件" class="headerlink" title="遗留文件"></a>遗留文件</h3><p>源代码内含有一些遗留调试文件,如：phpinfo.php，访问可能展示一些服务器信息，以及ip地址（可能为内网ip无用）</p>
+<h3 id="邮件系统："><a href="#邮件系统：" class="headerlink" title="邮件系统："></a>邮件系统：</h3><ul>
+<li><p>邮件系统一般不设置CDN，有些不支持</p>
+</li>
+<li><p>对方主动发邮件—&gt;类似于主动漏洞：</p>
+<p>常见邮件触发点：1.RSS订阅；2.邮箱注册，激活处；3.邮箱找回密码处；4.产品更新的邮件推送；5.某业务执行后发送的邮件通知；6.员工邮箱、邮件管理平台等入口处的忘记密码</p>
+<p>判断条件：发信人是当前域名邮件用户名</p>
+<p>如：</p>
+<p>墨者学院发的邮件来自为mail.mozhe.cn，是它自己的域名，并且在邮箱中查看邮件原文显示了域名和真实的ip地址</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411141817534.png"></p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411141818848.png"></p>
+<p>FOFA的邮件与其本身网站无关，不是搭建在他的域名上的，是别人的（126邮箱），与中转、代发一样，所以找不到源ip</p>
+<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411141816909.png"></p>
+</li>
+<li><p>主动发邮件给未知服务器</p>
+<p>注：需要用自己搭建的邮件服务器发，不能使用QQ等第三方服务器，否则返回的为第三方服务器的地址</p>
+<p>通过发送邮件给一个不存在的邮箱地址，因为该用户邮箱不存在，所以将发送失败，并且还会收到一个包含发送该电子邮件给你的服务器的真实ip地址。如<code>noreply@mail.mozhe.cn</code>存在，发送邮件给不存在的<code>abc@mail.mozhe.cn</code>，会返回其ip真实地址</p>
+</li>
+</ul>
+<h3 id="接口查询（做参考）"><a href="#接口查询（做参考）" class="headerlink" title="接口查询（做参考）"></a>接口查询（做参考）</h3><p>查询接口：</p>
+<ul>
+<li>国外网站接口查询（针对国内）：<code>https://get-site-ip.com</code></li>
+<li>FOFA云资产原始ip查询(针对国外）：<code>https://fofa.info/extensions/source</code></li>
+</ul>
+<h3 id="全网扫描"><a href="#全网扫描" class="headerlink" title="全网扫描"></a>全网扫描</h3><ul>
+<li><p>1.判断加速厂商：理论上国内域名用国内加速厂商，国外用国外的</p>
+<p>厂商查询：<code>https://tools.ipip.net/cdn.php</code></p>
+</li>
+<li><p>2.IP库筛地址段(免费版功能有限)</p>
+<p><code>https://cz88.net/</code></p>
+</li>
+<li><p>3.配置范围扫描</p>
+<ul>
+<li><p>工具:fuckcdn(基于ip访问，关键字筛选-如果网站不支持ip访问就会失败)</p>
+<p>运行逻辑:先从IP段去扫描符合开放端口,再从IP去访问查找关键字,将符合结果进行保存</p>
+</li>
+<li><p>工具：bypass_cdn(基于域名、子域名访问)</p>
+</li>
+</ul>
+</li>
 </ul>
 
-        </article>
-        
-        
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -549,11 +657,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>
