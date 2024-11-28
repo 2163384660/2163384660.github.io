@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>001-Web应用_架构搭建_站库分离_路由访问_配置受限_DNS解析 | 十二亿七千光年的笔记本</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="001-Web应用_架构搭建_站库分离_路由访问_配置受限_DNS解析 | 十二亿七千光年的笔记本">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="基础入门-Web应用&amp;架构搭建&amp;站库分离&amp;路由访问&amp;配置受限&amp;DNS解析1.Web必备四大件作用（1）web常规-系统&amp;中间件&amp;数据库&amp;源码等 系统：  中间件：  数据库：  源码：   （2）web其他-集成软件&amp;docker镜像&amp;分配站 集成软件：宝塔BT，phpstudy  docker镜像  分配站：如博客园">
+<meta property="og:type" content="article">
+<meta property="og:title" content="001-Web应用_架构搭建_站库分离_路由访问_配置受限_DNS解析">
+<meta property="og:url" content="http://example.com/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/1%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/001-Web%E5%BA%94%E7%94%A8&%E6%9E%B6%E6%9E%84%E6%90%AD%E5%BB%BA&%E7%AB%99%E5%BA%93%E5%88%86%E7%A6%BB&%E8%B7%AF%E7%94%B1%E8%AE%BF%E9%97%AE&%E9%85%8D%E7%BD%AE%E5%8F%97%E9%99%90&DNS%E8%A7%A3%E6%9E%90/index.html">
+<meta property="og:site_name" content="十二亿七千光年的笔记本">
+<meta property="og:description" content="基础入门-Web应用&amp;架构搭建&amp;站库分离&amp;路由访问&amp;配置受限&amp;DNS解析1.Web必备四大件作用（1）web常规-系统&amp;中间件&amp;数据库&amp;源码等 系统：  中间件：  数据库：  源码：   （2）web其他-集成软件&amp;docker镜像&amp;分配站 集成软件：宝塔BT，phpstudy  docker镜像  分配站：如博客园">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-11-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-28T07:01:28.490Z">
+<meta property="article:author" content="十二亿七千光年">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.ico">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/favicon.ico"/>
+</a>
+<div class="author">
+    <span>十二亿七千光年</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(24)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="数据库">
+            <i class="fold iconfont icon-right"></i>
+            数据库
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="数据库&lt;---&gt;mysql">
+            
+            mysql
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="网络安全">
+            <i class="fold iconfont icon-right"></i>
+            网络安全
+            <small>(20)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;小迪安全2023">
+            <i class="fold iconfont icon-right"></i>
+            小迪安全2023
+            <small>(20)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;小迪安全2023&lt;---&gt;基础入门">
+            
+            基础入门
+            <small>(10)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;小迪安全2023&lt;---&gt;信息打点">
+            
+            信息打点
+            <small>(10)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="Linux">
+            
+            Linux
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="python">
+            
+            python
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="24">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All python "
+           href="/python/Python%E5%9F%BA%E7%A1%80%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python基础思维导图">Python基础思维导图</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 数据库 mysql "
+           href="/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/mysql%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="mysql思维导图">mysql思维导图</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All Linux "
+           href="/Linux/Linux%E5%9F%BA%E7%A1%80%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux基础思维导图">Linux基础思维导图</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 基础入门 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/1%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/001-Web%E5%BA%94%E7%94%A8&%E6%9E%B6%E6%9E%84%E6%90%AD%E5%BB%BA&%E7%AB%99%E5%BA%93%E5%88%86%E7%A6%BB&%E8%B7%AF%E7%94%B1%E8%AE%BF%E9%97%AE&%E9%85%8D%E7%BD%AE%E5%8F%97%E9%99%90&DNS%E8%A7%A3%E6%9E%90/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="001-Web应用_架构搭建_站库分离_路由访问_配置受限_DNS解析">001-Web应用_架构搭建_站库分离_路由访问_配置受限_DNS解析</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 基础入门 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/1%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/002-Web%E6%9E%B6%E6%9E%84_%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%AB%99_Docker%E5%AE%B9%E5%99%A8%E7%AB%99_%E9%9B%86%E6%88%90%E8%BD%AF%E4%BB%B6%E7%AB%99_%E5%BB%BA%E7%AB%99%E5%88%86%E9%85%8D/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="002-Web架构_前后端分离站_Docker容器站_集成软件站_建站分配">002-Web架构_前后端分离站_Docker容器站_集成软件站_建站分配</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 基础入门 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/1%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/004-APP%E6%9E%B6%E6%9E%84_%E5%B0%8F%E7%A8%8B%E5%BA%8F_H5+Vue%E8%AF%AD%E8%A8%80_Web%E5%B0%81%E8%A3%85_%E5%8E%9F%E7%94%9F%E5%BC%80%E5%8F%91_Flutter/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="004-APP架构_小程序_H5+Vue语言_Web封装_原生开发_Flutter">004-APP架构_小程序_H5+Vue语言_Web封装_原生开发_Flutter</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 基础入门 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/1%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/003-Web%E6%9E%B6%E6%9E%84_OSS%E5%AD%98%E5%82%A8_%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1_CDN%E5%8A%A0%E9%80%9F_%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86_WAF%E9%98%B2%E6%8A%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="003-Web架构_OSS存储_负载均衡_CDN加速_反向代理_WAF防护">003-Web架构_OSS存储_负载均衡_CDN加速_反向代理_WAF防护</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 基础入门 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/1%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/006-%E6%8A%93%E5%8C%85%E6%8A%80%E6%9C%AF&HTTPS%E5%8D%8F%E8%AE%AE&APP&%E5%B0%8F%E7%A8%8B%E5%BA%8F&PC%E5%BA%94%E7%94%A8&WEB&%E8%BD%AC%E5%8F%91%E8%81%94%E5%8A%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="006-抓包技术&amp;HTTPS协议&amp;APP&amp;小程序&amp;PC应用&amp;WEB&amp;转发联动">006-抓包技术&amp;HTTPS协议&amp;APP&amp;小程序&amp;PC应用&amp;WEB&amp;转发联动</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 基础入门 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/1%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/007-%E6%8A%93%E5%8C%85%E6%8A%80%E6%9C%AF&%E5%85%A8%E5%B1%80%E5%8D%8F%E8%AE%AE&%E5%B0%81%E5%8C%85%E7%9B%91%E5%90%AC&%E7%BD%91%E5%8D%A1%E6%A8%A1%E5%BC%8F&APP&%E5%B0%8F%E7%A8%8B%E5%BA%8F&PC%E5%BA%94%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="007-抓包技术&amp;全局协议&amp;封包监听&amp;网卡模式&amp;APP&amp;小程序&amp;PC应用">007-抓包技术&amp;全局协议&amp;封包监听&amp;网卡模式&amp;APP&amp;小程序&amp;PC应用</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 基础入门 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/1%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/005-%E5%8F%8D%E5%BC%B9SHELL&%E4%B8%8D%E5%9B%9E%E6%98%BE%E5%B8%A6%E5%A4%96&%E6%AD%A3%E5%8F%8D%E5%90%91%E8%BF%9E%E6%8E%A5&%E9%98%B2%E7%81%AB%E5%A2%99%E5%87%BA%E5%85%A5%E7%AB%99&%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="005-反弹SHELL&amp;不回显带外&amp;正反向连接&amp;防火墙出入站&amp;文件下载">005-反弹SHELL&amp;不回显带外&amp;正反向连接&amp;防火墙出入站&amp;文件下载</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 基础入门 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/1%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/008-%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90&%E4%BC%A0%E8%BE%93%E5%8A%A0%E5%AF%86&%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F&%E5%AF%86%E6%96%87%E5%AD%98%E5%82%A8&%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86&%E9%80%86%E5%90%91%E4%BF%9D%E6%8A%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="008-算法分析&amp;传输加密&amp;数据格式&amp;密文存储&amp;代码混淆&amp;逆向保护">008-算法分析&amp;传输加密&amp;数据格式&amp;密文存储&amp;代码混淆&amp;逆向保护</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 信息打点 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/2%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9/012-Web%E5%BA%94%E7%94%A8&%E4%BC%81%E4%B8%9A%E4%BA%A7%E6%9D%83&%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB&%E5%9F%9F%E5%90%8D%E8%B5%84%E4%BA%A7&%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4&%E5%A8%81%E8%83%81%E6%83%85%E6%8A%A5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="012-Web应用&amp;企业产权&amp;指纹识别&amp;域名资产&amp;网络空间&amp;威胁情报">012-Web应用&amp;企业产权&amp;指纹识别&amp;域名资产&amp;网络空间&amp;威胁情报</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 基础入门 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/1%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/009-%E7%AE%97%E6%B3%95%E9%80%86%E5%90%91&%E6%95%A3%E5%88%97%E5%AF%B9%E7%A7%B0%E9%9D%9E%E5%AF%B9%E7%A7%B0&JS%E6%BA%90%E7%A0%81%E9%80%86%E5%90%91&AES&DES&RSA&SHA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="009-算法逆向&amp;散列对称非对称&amp;JS源码逆向&amp;AES&amp;DES&amp;RSA&amp;SHA">009-算法逆向&amp;散列对称非对称&amp;JS源码逆向&amp;AES&amp;DES&amp;RSA&amp;SHA</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 信息打点 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/2%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9/013-Web%E5%BA%94%E7%94%A8&%E6%BA%90%E7%A0%81%E6%B3%84%E6%BC%8F&%E5%BC%80%E6%BA%90%E9%97%AD%E6%BA%90&%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB&GIT&SVN&DS&%E5%A4%87%E4%BB%BD/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="013-Web应用&amp;源码泄漏&amp;开源闭源&amp;指纹识别&amp;GIT&amp;SVN&amp;DS&amp;备份">013-Web应用&amp;源码泄漏&amp;开源闭源&amp;指纹识别&amp;GIT&amp;SVN&amp;DS&amp;备份</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 信息打点 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/2%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9/015-%E4%B8%BB%E6%9C%BA%E6%9E%B6%E6%9E%84&%E8%9C%9C%E7%BD%90%E8%AF%86%E5%88%AB&WAF%E8%AF%86%E5%88%AB&%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F&%E5%8D%8F%E8%AE%AE%E8%AF%86%E5%88%AB&%E6%9C%8D%E5%8A%A1%E5%AE%89%E5%85%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="015-主机架构&amp;蜜罐识别&amp;WAF识别&amp;端口扫描&amp;协议识别&amp;服务安全">015-主机架构&amp;蜜罐识别&amp;WAF识别&amp;端口扫描&amp;协议识别&amp;服务安全</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 信息打点 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/2%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9/014-JS%E6%9E%B6%E6%9E%84&%E6%A1%86%E6%9E%B6%E8%AF%86%E5%88%AB&%E6%B3%84%E6%BC%8F%E6%8F%90%E5%8F%96&API%E6%8E%A5%E5%8F%A3%E6%9E%9A%E4%B8%BE&FUZZ%E7%88%AC%E8%99%AB&%E6%8F%92%E4%BB%B6%E9%A1%B9%E7%9B%AE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="014-JS架构&amp;框架识别&amp;泄漏提取&amp;API接口枚举&amp;FUZZ爬虫&amp;插件项目">014-JS架构&amp;框架识别&amp;泄漏提取&amp;API接口枚举&amp;FUZZ爬虫&amp;插件项目</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/1%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/010-HTTP%E6%95%B0%E6%8D%AE%E5%8C%85&Postman%E6%9E%84%E9%80%A0&%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95&%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%BF%AE%E6%94%B9&%E7%8A%B6%E6%80%81%E7%A0%81%E5%88%A4%E6%96%AD/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="010-HTTP数据包&amp;Postman构造&amp;请求方法&amp;请求头修改&amp;状态码判断">010-HTTP数据包&amp;Postman构造&amp;请求方法&amp;请求头修改&amp;状态码判断</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 信息打点 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/2%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9/017-%E8%AF%AD%E8%A8%80%E6%A1%86%E6%9E%B6&%E5%BC%80%E5%8F%91%E7%BB%84%E4%BB%B6&FastJson&Shiro&Log4j&SpringBoot%E7%AD%89/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="017-语言框架&amp;开发组件&amp;FastJson&amp;Shiro&amp;Log4j&amp;SpringBoot等">017-语言框架&amp;开发组件&amp;FastJson&amp;Shiro&amp;Log4j&amp;SpringBoot等</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 信息打点 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/2%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9/016-CDN%E7%BB%95%E8%BF%87&%E4%B8%9A%E5%8A%A1%E9%83%A8%E7%BD%B2&%E6%BC%8F%E6%B4%9E%E5%9B%9E%E9%93%BE&%E6%8E%A5%E5%8F%A3%E6%8E%A2%E9%92%88&%E5%85%A8%E7%BD%91%E6%89%AB%E6%8F%8F&%E5%8F%8D%E5%90%91%E9%82%AE%E4%BB%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="016-CDN绕过&amp;业务部署&amp;漏洞回链&amp;接口探针&amp;全网扫描&amp;反向邮件">016-CDN绕过&amp;业务部署&amp;漏洞回链&amp;接口探针&amp;全网扫描&amp;反向邮件</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 基础入门 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/1%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/011-ChatGPT%E4%BB%8E%E6%B3%A8%E5%86%8C%E5%88%B0%E6%8F%90%E9%AB%98%E5%AE%89%E5%85%A8%E8%83%BD%E5%8A%9B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="011-ChatGPT从注册到提高安全能力">011-ChatGPT从注册到提高安全能力</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 信息打点 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/2%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9/018-APP%E8%B5%84%E4%BA%A7&%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83&%E5%BA%94%E7%94%A8%E7%9B%91%E6%8E%A7&%E9%9D%99%E6%80%81%E6%8F%90%E5%8F%96&%E5%8A%A8%E6%80%81%E6%8A%93%E5%8C%85&%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="018-APP资产&amp;知识产权&amp;应用监控&amp;静态提取&amp;动态抓包&amp;动态调试">018-APP资产&amp;知识产权&amp;应用监控&amp;静态提取&amp;动态抓包&amp;动态调试</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 信息打点 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/2%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9/019-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BA%94%E7%94%A8&%E8%A7%A3%E5%8C%85%E5%8F%8D%E7%BC%96%E8%AF%91&%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95&%E6%8A%93%E5%8C%85&%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90&%E6%BA%90%E7%A0%81%E6%9E%B6%E6%9E%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="019-小程序应用&amp;解包反编译&amp;动态调试&amp;抓包&amp;静态分析&amp;源码架构">019-小程序应用&amp;解包反编译&amp;动态调试&amp;抓包&amp;静态分析&amp;源码架构</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 信息打点 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/2%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9/020-%E7%BA%A2%E8%93%9D%E9%98%9F%E8%87%AA%E5%8A%A8%E5%8C%96%E9%A1%B9%E7%9B%AE&%E8%B5%84%E4%BA%A7%E4%BE%A6%E5%AF%9F&%E4%BC%81%E6%9F%A5%E4%BA%A7%E6%9D%83&%E6%AD%A6%E5%99%A8%E5%BA%93%E9%83%A8%E7%BD%B2&%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="020-红蓝队自动化项目&amp;资产侦察&amp;企查产权&amp;武器库部署&amp;网络空间">020-红蓝队自动化项目&amp;资产侦察&amp;企查产权&amp;武器库部署&amp;网络空间</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 小迪安全2023 信息打点 "
+           href="/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A82023/2%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9/021-%E5%85%AC%E4%BC%97%E5%8F%B7%E6%9C%8D%E5%8A%A1&Github%E7%9B%91%E6%8E%A7&%E4%BE%9B%E5%BA%94%E9%93%BE&%E7%BD%91%E7%9B%98%E6%B3%84%E6%BC%8F&%E8%AF%81%E4%B9%A6%E5%9B%BE%E6%A0%87%E9%82%AE%E7%AE%B1%E8%B5%84%E4%BA%A7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="021-公众号服务&amp;Github监控&amp;供应链&amp;网盘泄漏&amp;证书图标邮箱资产">021-公众号服务&amp;Github监控&amp;供应链&amp;网盘泄漏&amp;证书图标邮箱资产</span>
+            <span class="post-date" title="2024-11-06 00:00:00">2024/11/06</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-网络安全/小迪安全2023/1基础入门/001-Web应用&amp;架构搭建&amp;站库分离&amp;路由访问&amp;配置受限&amp;DNS解析" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">001-Web应用_架构搭建_站库分离_路由访问_配置受限_DNS解析</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="网络安全">网络安全</a> > 
+            
+            <a  data-rel="网络安全&lt;---&gt;小迪安全2023">小迪安全2023</a> > 
+            
+            <a  data-rel="网络安全&lt;---&gt;小迪安全2023&lt;---&gt;基础入门">基础入门</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-11-28 15:01:28'>2024-11-06 00:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8-Web%E5%BA%94%E7%94%A8-%E6%9E%B6%E6%9E%84%E6%90%AD%E5%BB%BA-%E7%AB%99%E5%BA%93%E5%88%86%E7%A6%BB-%E8%B7%AF%E7%94%B1%E8%AE%BF%E9%97%AE-%E9%85%8D%E7%BD%AE%E5%8F%97%E9%99%90-DNS%E8%A7%A3%E6%9E%90"><span class="toc-text">基础入门-Web应用&amp;架构搭建&amp;站库分离&amp;路由访问&amp;配置受限&amp;DNS解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Web%E5%BF%85%E5%A4%87%E5%9B%9B%E5%A4%A7%E4%BB%B6%E4%BD%9C%E7%94%A8"><span class="toc-text">1.Web必备四大件作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%881%EF%BC%89web%E5%B8%B8%E8%A7%84-%E7%B3%BB%E7%BB%9F-%E4%B8%AD%E9%97%B4%E4%BB%B6-%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%BA%90%E7%A0%81%E7%AD%89"><span class="toc-text">（1）web常规-系统&amp;中间件&amp;数据库&amp;源码等</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%882%EF%BC%89web%E5%85%B6%E4%BB%96-%E9%9B%86%E6%88%90%E8%BD%AF%E4%BB%B6-docker%E9%95%9C%E5%83%8F-%E5%88%86%E9%85%8D%E7%AB%99"><span class="toc-text">（2）web其他-集成软件&amp;docker镜像&amp;分配站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BD%91%E7%AB%99%E5%B1%95%E7%A4%BA%E7%9A%84%E5%BD%A2%E5%BC%8F"><span class="toc-text">2.网站展示的形式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E6%A8%A1%E5%BC%8F"><span class="toc-text">网站模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%AD%90%E5%9F%9F%E5%90%8D%E6%A8%A1%E5%BC%8F"><span class="toc-text">（1）子域名模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E7%AB%AF%E5%8F%A3%E6%A8%A1%E5%BC%8F"><span class="toc-text">（2）端口模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E7%9B%AE%E5%BD%95%E6%A8%A1%E5%BC%8F"><span class="toc-text">（3）目录模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%BA%90%E7%A0%81%E5%92%8CURL%E8%AE%BF%E9%97%AE%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB"><span class="toc-text">3.源码和URL访问对应关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%B8%B8%E8%A7%84%E8%AE%BF%E9%97%AE"><span class="toc-text">（1）常规访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E8%B7%AF%E7%94%B1%E8%AE%BF%E9%97%AE"><span class="toc-text">（2）路由访问</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%BA%90%E7%A0%81%E6%9C%89%E5%8A%A0%E5%AF%86%E5%BC%80%E6%BA%90%E9%97%AD%E6%BA%90%E7%B1%BB%E5%9E%8B"><span class="toc-text">4.源码有加密开源闭源类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81"><span class="toc-text">WEB程序源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%96%87%E4%BB%B6%E8%AE%BF%E9%97%AE%E8%A7%A3%E6%9E%90%E7%94%B1%E4%BB%80%E4%B9%88%E5%86%B3%E5%AE%9A"><span class="toc-text">5.文件访问解析由什么决定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE%E7%AB%99%E5%BA%93%E5%88%86%E7%A6%BB"><span class="toc-text">6.数据库存储数据站库分离</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E6%BA%90%E7%A0%81%E4%B8%8D%E5%9C%A8%E4%B8%80%E8%B5%B7"><span class="toc-text">网站的数据库和源码不在一起</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSS%E5%AD%98%E5%82%A8%EF%BC%8C%E5%8F%AA%E5%AD%98%E5%82%A8%E4%B8%8D%E8%A7%A3%E6%9E%90"><span class="toc-text">OSS存储，只存储不解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E4%B8%AD%E9%97%B4%E4%BB%B6%E9%85%8D%E7%BD%AE%E5%BD%B1%E5%93%8D%E5%90%8E%E7%BB%AD%E6%89%8B%E6%B3%95"><span class="toc-text">7.中间件配置影响后续手法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%90%8E%E9%97%A8"><span class="toc-text">（1）后门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8A%E7%9A%84%E9%85%8D%E7%BD%AE%E5%BD%B1%E5%93%8D%E5%90%8E%E9%9D%A2%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98"><span class="toc-text">（2）中间件上的配置影响后面的一系列问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%B8%B8%E8%A7%84%E7%9C%9F%E5%AE%9EWeb%E6%90%AD%E5%BB%BA%E8%A7%A3%E6%9E%90%E6%B5%81%E7%A8%8B"><span class="toc-text">8.常规真实Web搭建解析流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E4%BB%B6%E8%A7%A3%E6%9E%90%E8%A7%84%E5%88%99"><span class="toc-text">中间件解析规则</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-6 i,
+    .toc-level-6 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="基础入门-Web应用-架构搭建-站库分离-路由访问-配置受限-DNS解析"><a href="#基础入门-Web应用-架构搭建-站库分离-路由访问-配置受限-DNS解析" class="headerlink" title="基础入门-Web应用&amp;架构搭建&amp;站库分离&amp;路由访问&amp;配置受限&amp;DNS解析"></a>基础入门-Web应用&amp;架构搭建&amp;站库分离&amp;路由访问&amp;配置受限&amp;DNS解析</h1><h2 id="1-Web必备四大件作用"><a href="#1-Web必备四大件作用" class="headerlink" title="1.Web必备四大件作用"></a>1.Web必备四大件作用</h2><h2 id="（1）web常规-系统-中间件-数据库-源码等"><a href="#（1）web常规-系统-中间件-数据库-源码等" class="headerlink" title="（1）web常规-系统&amp;中间件&amp;数据库&amp;源码等"></a>（1）web常规-系统&amp;中间件&amp;数据库&amp;源码等</h2><ul>
+<li><p>系统：</p>
+</li>
+<li><p>中间件：</p>
+</li>
+<li><p>数据库：</p>
+</li>
+<li><p>源码：</p>
+</li>
+</ul>
+<h2 id="（2）web其他-集成软件-docker镜像-分配站"><a href="#（2）web其他-集成软件-docker镜像-分配站" class="headerlink" title="（2）web其他-集成软件&amp;docker镜像&amp;分配站"></a>（2）web其他-集成软件&amp;docker镜像&amp;分配站</h2><ul>
+<li><p>集成软件：宝塔BT，phpstudy</p>
+</li>
+<li><p>docker镜像</p>
+</li>
+<li><p>分配站：如博客园个人账户分配到使用的站点子域名，安全性更好</p>
+</li>
+</ul>
+<h2 id="2-网站展示的形式"><a href="#2-网站展示的形式" class="headerlink" title="2.网站展示的形式"></a>2.网站展示的形式</h2><h2 id="网站模式"><a href="#网站模式" class="headerlink" title="网站模式"></a>网站模式</h2><h3 id="（1）子域名模式"><a href="#（1）子域名模式" class="headerlink" title="（1）子域名模式"></a>（1）子域名模式</h3><ul>
+<li><p><code>www.xiaodi8.com</code> zblog asp程序</p>
+</li>
+<li><p><code>xiaodi.xaiodi8.com</code> wordpress php程序</p>
+</li>
+<li><p><code>bbs.xiaodi8.com</code> 论坛 dz程序</p>
+</li>
+<li><p><code>oa.xiaodi8.com</code> OA 通达OA</p>
+</li>
+</ul>
+<h3 id="（2）端口模式"><a href="#（2）端口模式" class="headerlink" title="（2）端口模式"></a>（2）端口模式</h3><ul>
+<li><p><code>www.xaiodi8.com</code></p>
+<p>zblog asp程序</p>
+</li>
+<li><p><code>www.xiaodi8.com:8000</code></p>
+<p>wordpress php程序</p>
+</li>
+</ul>
+<h3 id="（3）目录模式"><a href="#（3）目录模式" class="headerlink" title="（3）目录模式"></a>（3）目录模式</h3><ul>
+<li><p><code>http://www.xiaosedi123.fun/</code></p>
+<p> zblog asp程序</p>
+</li>
+<li><p><code>http://www.xiaosedi123.fun/bbs</code></p>
+<p> 论坛 dz程序</p>
+</li>
+</ul>
+<h2 id="3-源码和URL访问对应关系"><a href="#3-源码和URL访问对应关系" class="headerlink" title="3.源码和URL访问对应关系"></a>3.源码和URL访问对应关系</h2><h3 id="（1）常规访问"><a href="#（1）常规访问" class="headerlink" title="（1）常规访问"></a>（1）常规访问</h3><p>URL和文件目录对应得上</p>
+<h3 id="（2）路由访问"><a href="#（2）路由访问" class="headerlink" title="（2）路由访问"></a>（2）路由访问</h3><p>mvc源码 java python</p>
+<p>URL和文件目录对应不上，根据配置路由决定。url如何构造</p>
+<h2 id="4-源码有加密开源闭源类型"><a href="#4-源码有加密开源闭源类型" class="headerlink" title="4.源码有加密开源闭源类型"></a>4.源码有加密开源闭源类型</h2><h2 id="WEB程序源码"><a href="#WEB程序源码" class="headerlink" title="WEB程序源码"></a>WEB程序源码</h2><ul>
+<li><p>（1）开源</p>
+<p>免费</p>
+<ul>
+<li><p>开源-源码可见</p>
+</li>
+<li><p>开源-源码不可见</p>
+<p>加密：PHP加密</p>
+<p>语言特性决定：java</p>
+</li>
+</ul>
+</li>
+<li><p>（2）商业</p>
+<p>付费</p>
+</li>
+<li><p>（3）自写</p>
+<p>一般为大公司使用</p>
+</li>
+</ul>
+<h2 id="5-文件访问解析由什么决定"><a href="#5-文件访问解析由什么决定" class="headerlink" title="5.文件访问解析由什么决定"></a>5.文件访问解析由什么决定</h2><p>由路由配置决定</p>
+<h2 id="6-数据库存储数据站库分离"><a href="#6-数据库存储数据站库分离" class="headerlink" title="6.数据库存储数据站库分离"></a>6.数据库存储数据站库分离</h2><h3 id="网站的数据库和源码不在一起"><a href="#网站的数据库和源码不在一起" class="headerlink" title="网站的数据库和源码不在一起"></a>网站的数据库和源码不在一起</h3><p>以前一台服务器放源码，一台服务器搭建作为数据库。现在可以使用云数据库</p>
+<p>云数据库安全性大大提高（不再使用传统账号密码连接）</p>
+<h3 id="OSS存储，只存储不解析"><a href="#OSS存储，只存储不解析" class="headerlink" title="OSS存储，只存储不解析"></a>OSS存储，只存储不解析</h3><p>网页存储如放入到OSS中，上传后门就无法完成</p>
+<h2 id="7-中间件配置影响后续手法"><a href="#7-中间件配置影响后续手法" class="headerlink" title="7.中间件配置影响后续手法"></a>7.中间件配置影响后续手法</h2><h3 id="（1）后门"><a href="#（1）后门" class="headerlink" title="（1）后门"></a>（1）后门</h3><p>需要访问得了，触发得了，能执行才有用，不给执行权限就没用</p>
+<p>网页post目录（图片目录）下写入一个马，通过onefox哥斯拉连接</p>
+<p>权限设置里设置everyone所有权限被拒绝后就连接不上了，如果是某些目录的话访问会提示401</p>
+<h3 id="（2）中间件上的配置影响后面的一系列问题"><a href="#（2）中间件上的配置影响后面的一系列问题" class="headerlink" title="（2）中间件上的配置影响后面的一系列问题"></a>（2）中间件上的配置影响后面的一系列问题</h3><p>IIS权限，身份验证</p>
+<ul>
+<li>身份验证：目录中启用windows身份验证（服务器账号密码）后，再次访问前端提示需要登录（无法绕过）</li>
+</ul>
+<h2 id="8-常规真实Web搭建解析流程"><a href="#8-常规真实Web搭建解析流程" class="headerlink" title="8.常规真实Web搭建解析流程"></a>8.常规真实Web搭建解析流程</h2><h3 id="中间件解析规则"><a href="#中间件解析规则" class="headerlink" title="中间件解析规则"></a>中间件解析规则</h3><p>影响访问时得到的结果，MIME类型：访问后下载；访问后显示；上传asp后门，网站自动解析为png，就无效了</p>
+<hr>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2017 十二亿七千光年
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 562px;
+    }
+    .nav.fullscreen {
+        margin-left: -562px;
+    }
+    .nav-left {
+        width: 140px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 512px;
+        }
+        .nav.fullscreen {
+            margin-left: -512px;
+        }
+        .nav-left {
+            width: 120px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 512px;
+            margin-left: -512px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
