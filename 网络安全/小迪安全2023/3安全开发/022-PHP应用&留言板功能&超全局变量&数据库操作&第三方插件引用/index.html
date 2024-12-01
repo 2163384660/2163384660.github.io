@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>015-主机架构&amp;蜜罐识别&amp;WAF识别&amp;端口扫描&amp;协议识别&amp;服务安全 | 十二亿七千光年的笔记本</title>
+  <title>022-PHP应用&amp;留言板功能&amp;超全局变量&amp;数据库操作&amp;第三方插件引用 | 十二亿七千光年的笔记本</title>
   <meta name="keywords" content="">
-  <meta name="description" content="015-主机架构&amp;蜜罐识别&amp;WAF识别&amp;端口扫描&amp;协议识别&amp;服务安全 | 十二亿七千光年的笔记本">
+  <meta name="description" content="022-PHP应用&amp;留言板功能&amp;超全局变量&amp;数据库操作&amp;第三方插件引用 | 十二亿七千光年的笔记本">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Linux基础思维导图">
 <meta property="og:type" content="article">
@@ -595,9 +595,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-网络安全/小迪安全2023/2信息打点/015-主机架构&amp;蜜罐识别&amp;WAF识别&amp;端口扫描&amp;协议识别&amp;服务安全" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-网络安全/小迪安全2023/3安全开发/022-PHP应用&amp;留言板功能&amp;超全局变量&amp;数据库操作&amp;第三方插件引用" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">015-主机架构&amp;蜜罐识别&amp;WAF识别&amp;端口扫描&amp;协议识别&amp;服务安全</h1>
+        <h1 class="article-title">022-PHP应用&amp;留言板功能&amp;超全局变量&amp;数据库操作&amp;第三方插件引用</h1>
     
     <div class="article-meta">
         
@@ -611,7 +611,7 @@
             
             <a  data-rel="网络安全&lt;---&gt;小迪安全2023">小迪安全2023</a> > 
             
-            <a  data-rel="网络安全&lt;---&gt;小迪安全2023&lt;---&gt;信息打点">信息打点</a>
+            <a  data-rel="网络安全&lt;---&gt;小迪安全2023&lt;---&gt;安全开发">安全开发</a>
             
         </span>
         
@@ -619,7 +619,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-28 15:03:03'>2024-11-06 00:00</time>
+            Created At : <time class="date" title='Updated At: 2024-12-01 18:33:03'>2024-11-06 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -641,7 +641,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9-%E4%B8%BB%E6%9C%BA%E6%9E%B6%E6%9E%84-%E8%9C%9C%E7%BD%90%E8%AF%86%E5%88%AB-WAF%E8%AF%86%E5%88%AB-%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F-%E5%8D%8F%E8%AE%AE%E8%AF%86%E5%88%AB-%E6%9C%8D%E5%8A%A1%E5%AE%89%E5%85%A8"><span class="toc-text">信息打点-主机架构&amp;蜜罐识别&amp;WAF识别&amp;端口扫描&amp;协议识别&amp;服务安全</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Web%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%9A"><span class="toc-text">Web服务器：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%9A"><span class="toc-text">应用服务器：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%EF%BC%9A"><span class="toc-text">端口扫描：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WAF%E9%98%B2%E7%81%AB%E5%A2%99%E8%AF%86%E5%88%AB%EF%BC%88%E5%A4%A7%E6%A6%82%E7%8E%87%E6%94%BE%E5%BC%83%E4%B8%8D%E7%94%A8%E8%AF%86%E5%88%AB%EF%BC%89"><span class="toc-text">WAF防火墙识别（大概率放弃不用识别）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9C%9C%E7%BD%90%E8%AF%86%E5%88%AB%EF%BC%88%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97-%E8%93%9D%E9%98%9F%E9%83%A8%E7%BD%B2%E7%BA%A2%E9%98%9F%E8%AF%86%E5%88%AB%EF%BC%89"><span class="toc-text">蜜罐识别（红蓝对抗-蓝队部署红队识别）</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP%E5%BA%94%E7%94%A8-%E7%95%99%E8%A8%80%E6%9D%BF%E5%8A%9F%E8%83%BD-%E8%B6%85%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C-%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8F%92%E4%BB%B6%E5%BC%95%E7%94%A8"><span class="toc-text">PHP应用&amp;留言板功能&amp;超全局变量&amp;数据库操作&amp;第三方插件引用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%95%99%E8%A8%80%E6%9D%BF%E5%8A%9F%E8%83%BD"><span class="toc-text">留言板功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%EF%BC%9ADW-PHPStorm-PhpStudy-PHP7-0-Navicat-Premium"><span class="toc-text">1.开发环境：DW + PHPStorm + PhpStudy+PHP7.0 + Navicat Premium</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5-mysql%E6%9E%B6%E6%9E%84-%E5%BA%93%E8%A1%A8%E5%88%97"><span class="toc-text">2.数据导入-mysql架构&amp;库表列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D%EF%BC%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%90%8D%EF%BC%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%97%E5%90%8D"><span class="toc-text">（1）数据库名，数据库表名，数据库列名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E6%95%B0%E6%8D%AE%E5%BA%93%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%A0%BC%E5%BC%8F%E7%B1%BB%E5%9E%8B%EF%BC%8C%E9%95%BF%E5%BA%A6%EF%BC%8C%E9%94%AE%E7%AD%89"><span class="toc-text">（2）数据库数据，格式类型，长度，键等</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C-mysqli%E5%87%BD%E6%95%B0-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-text">3.数据库操作-mysqli函数&amp;增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E5%87%BD%E6%95%B0%EF%BC%9A%E8%BF%9E%E6%8E%A5%EF%BC%8C%E9%80%89%E6%8B%A9%EF%BC%8C%E6%89%A7%E8%A1%8C%EF%BC%8C%E7%BB%93%E6%9E%9C%EF%BC%8C%E5%85%B3%E9%97%AD%E7%AD%89"><span class="toc-text">PHP函数：连接，选择，执行，结果，关闭等</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MYSQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%EF%BC%9A"><span class="toc-text">MYSQL增删改查：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%95%B0%E6%8D%AE%E6%8E%A5%E6%94%B6%E8%BE%93%E5%87%BA-html%E6%B7%B7%E7%BC%96-%E8%B6%85%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text">4.数据接收输出-html混编&amp;超全局变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-html%E6%B7%B7%E7%BC%96"><span class="toc-text">(1)html混编</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%B6%85%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text">(2)超全局变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8F%92%E4%BB%B6%E5%BC%95%E7%94%A8-js%E4%BC%A0%E5%8F%82-%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E8%B0%83%E7%94%A8"><span class="toc-text">5.第三方插件引用-js传参&amp;函数对象调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%9D%82%E8%AE%B0"><span class="toc-text">其他杂记</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -657,116 +657,49 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="信息打点-主机架构-蜜罐识别-WAF识别-端口扫描-协议识别-服务安全"><a href="#信息打点-主机架构-蜜罐识别-WAF识别-端口扫描-协议识别-服务安全" class="headerlink" title="信息打点-主机架构&amp;蜜罐识别&amp;WAF识别&amp;端口扫描&amp;协议识别&amp;服务安全"></a>信息打点-主机架构&amp;蜜罐识别&amp;WAF识别&amp;端口扫描&amp;协议识别&amp;服务安全</h1><h2 id="Web服务器："><a href="#Web服务器：" class="headerlink" title="Web服务器："></a>Web服务器：</h2><ul>
-<li>Apache</li>
-<li>Nginx</li>
-<li>IIS</li>
-<li>Lighttpd等</li>
+        <h1 id="PHP应用-留言板功能-超全局变量-数据库操作-第三方插件引用"><a href="#PHP应用-留言板功能-超全局变量-数据库操作-第三方插件引用" class="headerlink" title="PHP应用&amp;留言板功能&amp;超全局变量&amp;数据库操作&amp;第三方插件引用"></a>PHP应用&amp;留言板功能&amp;超全局变量&amp;数据库操作&amp;第三方插件引用</h1><h2 id="留言板功能"><a href="#留言板功能" class="headerlink" title="留言板功能"></a>留言板功能</h2><p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411301552222.png"></p>
+<h2 id="1-开发环境：DW-PHPStorm-PhpStudy-PHP7-0-Navicat-Premium"><a href="#1-开发环境：DW-PHPStorm-PhpStudy-PHP7-0-Navicat-Premium" class="headerlink" title="1.开发环境：DW + PHPStorm + PhpStudy+PHP7.0 + Navicat Premium"></a>1.开发环境：DW + PHPStorm + PhpStudy+PHP7.0 + Navicat Premium</h2><ul>
+<li>DW(Adobe Dreamweaver) : HTML&amp;JS&amp;CSS开发</li>
+<li>PHPStorm : 专业PHP开发IDE</li>
+<li>PhpStudy ：Apache&amp;MYSQL环境</li>
+<li>Navicat Premium: 全能数据库管理工具</li>
 </ul>
-<h2 id="应用服务器："><a href="#应用服务器：" class="headerlink" title="应用服务器："></a>应用服务器：</h2><ul>
-<li>Tomoat</li>
-<li>Jboss</li>
-<li>Weblogin</li>
-<li>Websphere</li>
-</ul>
-<h2 id="端口扫描："><a href="#端口扫描：" class="headerlink" title="端口扫描："></a>端口扫描：</h2><ul>
-<li><p>工具：</p>
+<h2 id="2-数据导入-mysql架构-库表列"><a href="#2-数据导入-mysql架构-库表列" class="headerlink" title="2.数据导入-mysql架构&amp;库表列"></a>2.数据导入-mysql架构&amp;库表列</h2><h3 id="（1）数据库名，数据库表名，数据库列名"><a href="#（1）数据库名，数据库表名，数据库列名" class="headerlink" title="（1）数据库名，数据库表名，数据库列名"></a>（1）数据库名，数据库表名，数据库列名</h3><h3 id="（2）数据库数据，格式类型，长度，键等"><a href="#（2）数据库数据，格式类型，长度，键等" class="headerlink" title="（2）数据库数据，格式类型，长度，键等"></a>（2）数据库数据，格式类型，长度，键等</h3><h2 id="3-数据库操作-mysqli函数-增删改查"><a href="#3-数据库操作-mysqli函数-增删改查" class="headerlink" title="3.数据库操作-mysqli函数&amp;增删改查"></a>3.数据库操作-mysqli函数&amp;增删改查</h2><h3 id="PHP函数：连接，选择，执行，结果，关闭等"><a href="#PHP函数：连接，选择，执行，结果，关闭等" class="headerlink" title="PHP函数：连接，选择，执行，结果，关闭等"></a>PHP函数：连接，选择，执行，结果，关闭等</h3><p><code>https://www.runoob.com/php/php-ref-mysqli.html</code></p>
+<p>常用：</p>
+<p><strong>mysqli_connect()</strong> 打开一个到MySQL的新的连接</p>
+<p><strong>mysqli_select_db()</strong> 更改连接的默认数据库</p>
+<p><strong>mysqli_query()</strong> 执行某个针对数据库的查询</p>
+<p><strong>mysqli_fetch_row()</strong> 从结果集中取得一行，并作为枚举数组返回</p>
+<p><strong>mysqli_close()</strong> 关闭先前打开的数据库连接</p>
+<h3 id="MYSQL增删改查："><a href="#MYSQL增删改查：" class="headerlink" title="MYSQL增删改查："></a>MYSQL增删改查：</h3><p>查：select * from 表名 where 列名&#x3D;’条件’;</p>
+<p>增：insert into 表名(‘列名1’, ‘列名2’) value(‘列1值1’, ‘列2值2’);</p>
+<p>删：delete from 表名 where 列名 &#x3D; ‘条件’;</p>
+<p>改：update 表名 set 列名 &#x3D; 数据 where 列名 &#x3D; ‘条件’;</p>
+<h2 id="4-数据接收输出-html混编-超全局变量"><a href="#4-数据接收输出-html混编-超全局变量" class="headerlink" title="4.数据接收输出-html混编&amp;超全局变量"></a>4.数据接收输出-html混编&amp;超全局变量</h2><h3 id="1-html混编"><a href="#1-html混编" class="headerlink" title="(1)html混编"></a>(1)html混编</h3><p>使HTML(JS)在PHP语言中运行,弹出一个 <strong>JavaScript 提示框</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;script&gt;alert(&#x27;x&#x27;);&lt;/script&gt;&quot;</span></span><br><span class="line"><span class="meta">?&gt;</span> </span><br></pre></td></tr></table></figure>
+
+<h3 id="2-超全局变量"><a href="#2-超全局变量" class="headerlink" title="(2)超全局变量"></a>(2)超全局变量</h3><p><code>https://www.w3school.com.cn/php/php_superglobals.asp</code></p>
+<p><code>https://www.php.net/manual/zh/language.variables.superglobals.php</code></p>
+<p><code>https://www.runoob.com/php/php-superglobals.html</code></p>
 <ul>
-<li><p>Nmap（主动扫描-扫描时间略长-单个扫描）：</p>
-<p>图形化界面：zenmap - 常用扫描方法：Quick scan plus</p>
-<p>使用参考：</p>
-<p><code>https://blog.csdn.net/qq_53079406/article/details/125266331</code></p>
-<p>&#96;&#96;<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53079406/article/details/125263917%60">https://blog.csdn.net/qq_53079406/article/details/125263917`</a></p>
-</li>
-<li><p>Msscan（主动扫描-扫描时间短-批量扫描）</p>
-<p>需要下载源码进行编译安装</p>
-<p>编译(visualstudio)：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/lzy575566/p/15513726.html">https://www.cnblogs.com/lzy575566/p/15513726.html</a></p>
-</li>
-<li><p>网络空间（被动收集）</p>
-</li>
+<li>$GLOBALS：这种全局变量用于在 PHP 脚本中的任意位置访问全局变量</li>
+<li>$_SERVER：这种超全局变量保存关于报头、路径和脚本位置的信息</li>
+<li>$_REQUEST：用于收集 HTML 表单提交的数据</li>
+<li>$_POST：广泛用于收集提交method&#x3D;”post” 的HTML表单后的表单数据</li>
+<li>$_GET：收集URL中的发送的数据。也可用于收集提交HTML表单数据(method&#x3D;”get”)</li>
+<li>$_FILES：文件上传且处理包含通过HTTP POST方法上传给当前脚本的文件内容</li>
+<li>$_ENV：是一个包含服务器端环境变量的数组</li>
+<li>$_COOKIE：是一个关联数组，包含通过cookie传递给当前脚本的内容</li>
+<li>$_SESSION：是一个关联数组，包含当前脚本中的所有session内容</li>
 </ul>
-</li>
-<li><p>作用：</p>
-<p>判定端口是否开放识别：web中间件，应用中间件，数据库类型，其他服务协议</p>
-<p>针对对应服务使用对应测试手法</p>
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411131638222.jpg"></p>
-</li>
-<li><p>开放状态：</p>
-<p>Close  Open  Filtered</p>
-</li>
-<li><p>考虑问题：</p>
-<ul>
-<li>防火墙：端口实际开放，但是被防火墙阻止了，显示Filtered或关闭，不知道开没开</li>
-<li>内网：网站部署在内网服务器，使用反向代理到外网。可能出现问题：明明某些端口（如数据库3306端口）开放，网站也能正常打开，但是对目标进行扫描时，发现端口没有打开（排除防火墙），只能扫到代理到的端口。要与目标内网主机通讯才能全面正确的扫描</li>
-</ul>
-</li>
-</ul>
-<h2 id="WAF防火墙识别（大概率放弃不用识别）"><a href="#WAF防火墙识别（大概率放弃不用识别）" class="headerlink" title="WAF防火墙识别（大概率放弃不用识别）"></a>WAF防火墙识别（大概率放弃不用识别）</h2><ul>
-<li><p>WAF解释：</p>
-<p>Web应用防护系统（也称为：网站应用级入侵防御系统。英文：Web ApplicationFirewall，简称：WAF）。利用国际上公认的一种说法：Web应用防火墙是通过执行一系列针对HTTP&#x2F;HTTPS的安全策略来专门为Web应用提供保护的一款产品。</p>
-</li>
-<li><p>WAF分类：</p>
-<p>云WAF(最强，较贵，中大型企业、有经济实力的黑产领域）：百度安全宝、阿里云盾、长亭雷池，华为云，亚马逊云等</p>
-<p>硬件WAF（中大型企业、政务、学校、军工）：绿盟、安恒、深信服、知道创宇等公司商业产品</p>
-<p>软件WAF（较为便宜，个人小中型企业、无经济实力的黑产领域）：宝塔，安全狗、D盾等（可以尝试绕过）</p>
-<p>代码级WAF：自己写的waf规则（过滤规则），防止出现注入等，一般是在代码里面写死的</p>
-</li>
-<li><p>识别：</p>
-<p>通过拦截页面</p>
-<p>通过工具：</p>
-<ul>
-<li><p>wafw00f</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python .\main.py url</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>identYwaf</p>
-</li>
-</ul>
-<p>通过网络空间</p>
-<h2 id="蜜罐识别（红蓝对抗-蓝队部署红队识别）"><a href="#蜜罐识别（红蓝对抗-蓝队部署红队识别）" class="headerlink" title="蜜罐识别（红蓝对抗-蓝队部署红队识别）"></a>蜜罐识别（红蓝对抗-蓝队部署红队识别）</h2><ul>
-<li><p>蜜罐解释：</p>
-<p>蜜罐是一种安全威胁的检测技术，其本质在于引诱和欺骗攻击者，并且通过记录攻击者的攻击日志来产生价值。安全研究人员可以通过分析蜜罐的被攻击记录推测攻击者的意图和手段等信息。攻击方可以通过蜜罐识别技术来发现和规避蜜罐。因此，我们有必要站在红队攻击者的角度钻研蜜罐识别的方式方法。</p>
-</li>
-<li><p>蜜罐分类：</p>
-<ul>
-<li><p>根据蜜罐与攻击者之间进行的交互的程度可以将蜜罐分为三类</p>
-<p>低交互蜜罐：简单忽悠下</p>
-<p>中交互蜜罐</p>
-<p>高交互蜜罐</p>
-</li>
-<li><p>根据蜜罐模拟的目标</p>
-<p>数据库蜜罐</p>
-<p>工控蜜罐</p>
-<p>物联网蜜罐</p>
-<p>Web蜜罐等</p>
-</li>
-</ul>
-</li>
-<li><p>识别原理：</p>
-<p><code>https://mp.weixin.qq.com/s/jPz9hBmUypFyQlU27vglUg</code></p>
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411132159333.jpg"></p>
-</li>
-<li><p>Linux服务器安装蜜罐：</p>
-<p>工具：HFish <code>https://hfish.net/#/</code></p>
-</li>
-<li><p>识别是否存在蜜罐</p>
-<ul>
-<li><p>项目识别</p>
-<p>浏览器插件：Heimdallr <code>https://github.com/Ghr07h/Heimdallr</code></p>
-<p>使用：如果指纹嗅探和蜜罐告警有信息，可能存在蜜罐（方便，但存在误报）</p>
-<p>quake工具（推荐）：<code>https://github.com/360quake/quake_rs</code> quake网络空间</p>
-<p>需要初始化，并配置apikey（出钱）<code>quake.360.net</code></p>
-</li>
-<li><p>人工：</p>
-<p>端口多且有规律性</p>
-<p>web访问协议就下载，如访问3306会下载一个.html文件（可能）：模拟出来的蜜罐有传输数据，中转数据的功能（Jsonp技术）</p>
-<p>查看响应特征</p>
-<p><img src="https://learning-image-hwt.oss-cn-heyuan.aliyuncs.com/image1/202411132200369.png"></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<h2 id="5-第三方插件引用-js传参-函数对象调用"><a href="#5-第三方插件引用-js传参-函数对象调用" class="headerlink" title="5.第三方插件引用-js传参&amp;函数对象调用"></a>5.第三方插件引用-js传参&amp;函数对象调用</h2><p>引用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&#x27;../xxx.js&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="其他杂记"><a href="#其他杂记" class="headerlink" title="其他杂记"></a>其他杂记</h2><p><code>@</code>:容错符，用于抑制可能的错误</p>
 
       
        
