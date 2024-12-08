@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>013-Web应用&amp;源码泄漏&amp;开源闭源&amp;指纹识别&amp;GIT&amp;SVN&amp;DS&amp;备份 | 十二亿七千光年的笔记本</title>
+  <title>027-PHP应用&amp;TP框架&amp;路由访问&amp;对象操作&amp;内置过滤绕过&amp;核心漏洞 | 十二亿七千光年的笔记本</title>
   <meta name="keywords" content="">
-  <meta name="description" content="013-Web应用&amp;源码泄漏&amp;开源闭源&amp;指纹识别&amp;GIT&amp;SVN&amp;DS&amp;备份 | 十二亿七千光年的笔记本">
+  <meta name="description" content="027-PHP应用&amp;TP框架&amp;路由访问&amp;对象操作&amp;内置过滤绕过&amp;核心漏洞 | 十二亿七千光年的笔记本">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Linux基础思维导图">
 <meta property="og:type" content="article">
@@ -640,9 +640,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-网络安全/小迪安全2023/2信息打点/013-Web应用&amp;源码泄漏&amp;开源闭源&amp;指纹识别&amp;GIT&amp;SVN&amp;DS&amp;备份" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-网络安全/小迪安全2023/3安全开发/027-PHP应用&amp;TP框架&amp;路由访问&amp;对象操作&amp;内置过滤绕过&amp;核心漏洞" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">013-Web应用&amp;源码泄漏&amp;开源闭源&amp;指纹识别&amp;GIT&amp;SVN&amp;DS&amp;备份</h1>
+        <h1 class="article-title">027-PHP应用&amp;TP框架&amp;路由访问&amp;对象操作&amp;内置过滤绕过&amp;核心漏洞</h1>
     
     <div class="article-meta">
         
@@ -656,7 +656,7 @@
             
             <a  data-rel="网络安全&lt;---&gt;小迪安全2023">小迪安全2023</a> > 
             
-            <a  data-rel="网络安全&lt;---&gt;小迪安全2023&lt;---&gt;信息打点">信息打点</a>
+            <a  data-rel="网络安全&lt;---&gt;小迪安全2023&lt;---&gt;安全开发">安全开发</a>
             
         </span>
         
@@ -664,7 +664,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-28 15:03:05'>2024-11-06 00:00</time>
+            Created At : <time class="date" title='Updated At: 2024-12-07 16:38:44'>2024-11-06 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -686,7 +686,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9-Web-%E5%BA%94%E7%94%A8-%E6%BA%90%E7%A0%81%E6%B3%84%E6%BC%8F-%E5%BC%80%E6%BA%90%E9%97%AD%E6%BA%90-%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB-GIT-SVN-DS-%E5%A4%87%E4%BB%BD"><span class="toc-text">信息打点-Web 应用&amp;源码泄漏&amp;开源闭源&amp;指纹识别&amp;GIT&amp;SVN&amp;DS&amp; 备份</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CMS%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB%E6%BA%90%E7%A0%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F"><span class="toc-text">CMS指纹识别源码获取方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%BA%90%E7%A0%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F"><span class="toc-text">其他源码获取方式</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP%E5%BA%94%E7%94%A8-TP%E6%A1%86%E6%9E%B6-%E8%B7%AF%E7%94%B1%E8%AE%BF%E9%97%AE-%E5%AF%B9%E8%B1%A1%E6%93%8D%E4%BD%9C-%E5%86%85%E7%BD%AE%E8%BF%87%E6%BB%A4%E7%BB%95%E8%BF%87-%E6%A0%B8%E5%BF%83%E6%BC%8F%E6%B4%9E"><span class="toc-text">PHP应用&amp;TP框架&amp;路由访问&amp;对象操作&amp;内置过滤绕过&amp;核心漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-TP%E6%A1%86%E6%9E%B6-%E5%BC%80%E5%8F%91-%E9%85%8D%E7%BD%AE%E6%9E%B6%E6%9E%84-%E8%B7%AF%E7%94%B1-MVC%E6%A8%A1%E5%9E%8B"><span class="toc-text">1.TP框架-开发-配置架构&amp;路由&amp;MVC模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-TP%E6%A1%86%E6%9E%B6-%E5%AE%89%E5%85%A8-%E4%B8%8D%E5%AE%89%E5%85%A8%E5%86%99%E6%B3%95-%E7%89%88%E6%9C%AC%E8%BF%87%E6%BB%A4%E7%BB%95%E8%BF%87"><span class="toc-text">2.TP框架-安全-不安全写法&amp;版本过滤绕过</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E4%BB%A3%E7%A0%81%E5%86%99%E6%B3%95"><span class="toc-text">内置代码写法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%80%BB%E8%BE%91%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E%EF%BC%9A"><span class="toc-text">3.逻辑越权漏洞：</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -702,60 +702,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="信息打点-Web-应用-源码泄漏-开源闭源-指纹识别-GIT-SVN-DS-备份"><a href="#信息打点-Web-应用-源码泄漏-开源闭源-指纹识别-GIT-SVN-DS-备份" class="headerlink" title="信息打点-Web 应用&amp;源码泄漏&amp;开源闭源&amp;指纹识别&amp;GIT&amp;SVN&amp;DS&amp; 备份"></a>信息打点-Web 应用&amp;源码泄漏&amp;开源闭源&amp;指纹识别&amp;GIT&amp;SVN&amp;DS&amp; 备份</h1><h2 id="CMS指纹识别源码获取方式"><a href="#CMS指纹识别源码获取方式" class="headerlink" title="CMS指纹识别源码获取方式"></a>CMS指纹识别源码获取方式</h2><ul>
-<li><p>后端-开源-指纹识别-源码下载 &lt;&#x3D;&#x3D; CMS可以识别</p>
-<p>如指纹识别CMS为zblog-php，可以直接去官网下载zblog-php的源码</p>
-</li>
-<li><p>后端-闭源-配置不当-源码泄漏 &lt;&#x3D;&#x3D; CMS识别不到</p>
-<p>源码泄漏集合： <code>https://www.secpulse.com/archives/124398.html</code></p>
+        <h1 id="PHP应用-TP框架-路由访问-对象操作-内置过滤绕过-核心漏洞"><a href="#PHP应用-TP框架-路由访问-对象操作-内置过滤绕过-核心漏洞" class="headerlink" title="PHP应用&amp;TP框架&amp;路由访问&amp;对象操作&amp;内置过滤绕过&amp;核心漏洞"></a>PHP应用&amp;TP框架&amp;路由访问&amp;对象操作&amp;内置过滤绕过&amp;核心漏洞</h1><h2 id="1-TP框架-开发-配置架构-路由-MVC模型"><a href="#1-TP框架-开发-配置架构-路由-MVC模型" class="headerlink" title="1.TP框架-开发-配置架构&amp;路由&amp;MVC模型"></a>1.TP框架-开发-配置架构&amp;路由&amp;MVC模型</h2><p>参考官方手册：<code>https://www.kancloud.cn/manual/thinkphp5_1</code></p>
 <ul>
-<li><p>composer.json：php开发的东西，标识版本和程序的一些预配制信息</p>
+<li><p>1、配置架构-导入使用</p>
 </li>
-<li><p>git 源码泄露：开发时没有把.git目录删除，可以利用相关工具还原代码，如:IDEA</p>
-<p>如何判断：直接访问.git目录，存在即返回403</p>
-<p>利用工具：<strong>githack</strong></p>
+<li><p>2、路由访问-URL访问：按照特定的URL规则才能访问</p>
 </li>
-<li><p>svn 源码泄露：与.git原理一致</p>
-<p>利用工具：<strong>svnhack</strong></p>
-<p>可能遇到的情况：php代码被加密，常见：zend加密</p>
+<li><p>3、数据库操作-应用对象</p>
 </li>
-<li><p>hg 源码泄漏 </p>
+<li><p>4、文件上传操作-应用对象</p>
 </li>
-<li><p>网站备份压缩文件 : 网站管理员习惯不好，将网站源码进行压缩备份放到了网站根目录，类似命名为<a target="_blank" rel="noopener" href="http://www.zip等/">www.zip等</a> –&gt; 使用目录扫描可以扫出</p>
-</li>
-<li><p>WEB-INF&#x2F;web.xml 泄露 </p>
-</li>
-<li><p>DS_Store 文件泄露 ：mac系统下，用于保存展示文件&#x2F;文件夹结构的数据文件</p>
-<p>利用工具：只能得到目录架构，不能得到内容</p>
-</li>
-<li><p>SWP 文件泄露 CVS 泄露 </p>
-</li>
-<li><p>Bzr 泄露 </p>
-</li>
-<li><p>GitHub 源码泄漏</p>
+<li><p>5、前端页面渲染-MVC模型：模型（Model）、视图（View）和控制器（Controller）</p>
+<p>将数据、业务逻辑和界面显示分离，以便于独立开发和维护</p>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="其他源码获取方式"><a href="#其他源码获取方式" class="headerlink" title="其他源码获取方式"></a>其他源码获取方式</h2><ul>
-<li><p>识别出大致信息却无下载资源：</p>
-<p>如：官方不更新了</p>
-</li>
-<li><p>识别不出信息</p>
-<p>如：个人开发或受众不广</p>
-<p>方法：找国内外程序员开发使用的网站，在其中找开发作者或者源码的信息</p>
-</li>
-<li><p>其他行业开发使用对口资源站获取</p>
-<p>如：黑产类等其他特殊性行业，指纹识别也扫不到</p>
-<p>方法：使用对应源码下载等去其他网站找可能找得到</p>
-</li>
-</ul>
-<p>涉及网站：<code>www.gitee.com</code> , <code>www.github.com</code> , <code>www.huzhan.com</code></p>
-<p>相关方法：</p>
+<h2 id="2-TP框架-安全-不安全写法-版本过滤绕过"><a href="#2-TP框架-安全-不安全写法-版本过滤绕过" class="headerlink" title="2.TP框架-安全-不安全写法&amp;版本过滤绕过"></a>2.TP框架-安全-不安全写法&amp;版本过滤绕过</h2><h2 id="内置代码写法"><a href="#内置代码写法" class="headerlink" title="内置代码写法"></a>内置代码写法</h2><p>安全写法（相对安全）&#x3D;官方文档推荐写法</p>
+<p>不安全写法&#x3D;用一半安全写法、原生写法（不会受到保护）</p>
 <ul>
-<li>文件名搜索：F12进入网络（抓包）查看有代表性的文件名，拿去搜索，可能会在某些个人仓库里找到网站架构和相关源码</li>
-<li>关键字：扫描网站发现泄露了邮箱或者QQ号等信息</li>
+<li><p>1、安全写法（规矩写法）：但不是绝对安全 – &gt; 看版本有没有对应的安全漏洞</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$id</span>=<span class="title function_ invoke__">request</span>()-&gt;<span class="title function_ invoke__">param</span>(<span class="string">&#x27;x&#x27;</span>);</span><br><span class="line"><span class="variable">$data</span>=<span class="title class_">Db</span>::<span class="title function_ invoke__">table</span>(<span class="string">&#x27;news&#x27;</span>)-&gt;<span class="title function_ invoke__">where</span>(<span class="string">&#x27;id&#x27;</span>,<span class="variable">$id</span>)-&gt;<span class="title function_ invoke__">find</span>();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2、用一半安全写法：有安全隐患</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$id</span>=<span class="title function_ invoke__">request</span>()-&gt;<span class="title function_ invoke__">param</span>(<span class="string">&#x27;x&#x27;</span>);</span><br><span class="line"><span class="variable">$data</span>=<span class="title class_">Db</span>::<span class="title function_ invoke__">query</span>(<span class="string">&quot;select * from news where id=<span class="subst">$id</span>&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3、纯原生写法(完全不是用TP语法)：有安全隐患</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$id</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;id&#x27;</span>] ?? <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">sql=<span class="string">&quot;select * from news where id=<span class="subst">$id</span>&quot;</span>;</span><br><span class="line"><span class="variable">$data</span>=<span class="title function_ invoke__">mysqli_query</span>(<span class="variable">$con</span>,<span class="variable">$sql</span>);</span><br><span class="line"><span class="keyword">while</span> (<span class="variable">$row</span>=<span class="title function_ invoke__">mysqli_fetch_row</span>(<span class="variable">$data</span>)) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
+<p>ThinkPhP历史漏洞：<code>https://github.com/Mochazz/ThinkPHP-Vuln</code></p>
+<h2 id="3-逻辑越权漏洞："><a href="#3-逻辑越权漏洞：" class="headerlink" title="3.逻辑越权漏洞："></a>3.逻辑越权漏洞：</h2><p>用户身份在数据库中有uid类似的数据，这项数据不同数值会表示不同的身份（管理员，会员，游客等等），通过修改这项数据，可以跨身份。</p>
+<p>adminid，groupid等</p>
 
       
        
